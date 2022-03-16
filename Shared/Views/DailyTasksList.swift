@@ -64,11 +64,6 @@ struct DailyTasksList: View {
                 
                 Spacer()
             }
-//            .background(Color.init(white: 1).ignoresSafeArea())
-//            .onAppear {
-//                // Set the default to clear
-//                UITableView.appearance().backgroundColor = .clear
-//            }
         }
     }
     
@@ -89,9 +84,12 @@ struct DailyTasksList: View {
                     //                        DailyTasksEntry(text: $sectionTasks, parentColor: color)
                     //                    }
                     AddTaskButton(color: color)
+                    AddTaskButton(color: color)
+                    AddTaskButton(color: color)
+                    AddTaskButton(color: color)
+                    AddTaskButton(color: color)
+                    AddTaskButton(color: color)
                 }
-                // remove the left padding for entries
-                .listRowInsets(EdgeInsets())
             } label: {
                 Text(title).foregroundColor(color)
             }

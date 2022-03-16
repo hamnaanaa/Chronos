@@ -25,6 +25,8 @@
 		F285777127E11B9A00A812F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F285775E27E11B9A00A812F3 /* Assets.xcassets */; };
 		F285777C27E11CCE00A812F3 /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285777B27E11CCE00A812F3 /* DailyTasksList.swift */; };
 		F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285777B27E11CCE00A812F3 /* DailyTasksList.swift */; };
+		F299266527E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
+		F299266627E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		F285776927E11B9A00A812F3 /* Chronos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F285776B27E11B9A00A812F3 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F285777B27E11CCE00A812F3 /* DailyTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
+		F299266427E203AB00CE26ED /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +66,8 @@
 		F267EE4427E12E68006CEDF8 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				F267EE4A27E12F6A006CEDF8 /* Category.swift */,
-				F267EE4D27E13003006CEDF8 /* Tag.swift */,
-				F267EE5027E130B5006CEDF8 /* Status.swift */,
-				F267EE4727E12F2A006CEDF8 /* Task.swift */,
+				F299266327E2039900CE26ED /* Reflecting */,
+				F299266227E2037200CE26ED /* Planning */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -116,6 +117,25 @@
 				F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F299266227E2037200CE26ED /* Planning */ = {
+			isa = PBXGroup;
+			children = (
+				F267EE4A27E12F6A006CEDF8 /* Category.swift */,
+				F267EE4D27E13003006CEDF8 /* Tag.swift */,
+				F267EE5027E130B5006CEDF8 /* Status.swift */,
+				F267EE4727E12F2A006CEDF8 /* Task.swift */,
+			);
+			path = Planning;
+			sourceTree = "<group>";
+		};
+		F299266327E2039900CE26ED /* Reflecting */ = {
+			isa = PBXGroup;
+			children = (
+				F299266427E203AB00CE26ED /* Emotion.swift */,
+			);
+			path = Reflecting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +241,7 @@
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F267EE5127E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */,
+				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776E27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777C27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
 				F285776C27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
@@ -236,6 +257,7 @@
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */,
+				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776F27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
 				F285776D27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
