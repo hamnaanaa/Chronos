@@ -8,16 +8,35 @@
 import Foundation
 import SwiftUI
 
-enum Status: CaseIterable, Codable {
-    case value(Color)
+enum Status: String, CaseIterable, Codable {
     
     static var allCases: [Status] = [notStarted, inPrograss, done, postponed, missed, cancelled]
     
-    // pre-defined values
-    static let notStarted = Status.value(.yellow)
-    static let inPrograss = Status.value(.green)
-    static let done = Status.value(.blue)
-    static let postponed = Status.value(.purple)
-    static let missed = Status.value(.red)
-    static let cancelled = Status.value(.gray)
+    case notStarted
+    case inPrograss
+    case done
+    case postponed
+    case missed
+    case cancelled
+    
+    var color: Color {
+        switch self {
+        case .notStarted:
+            return .yellow
+        case .inPrograss:
+            return .green
+        case .done:
+            return .blue
+        case .postponed:
+            return .purple
+        case .missed:
+            return .red
+        case .cancelled:
+            return .gray
+        }
+    }
+    
+    var name: String {
+        rawValue
+    }
 }

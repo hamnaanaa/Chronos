@@ -92,12 +92,13 @@ struct DailyTasksList: View {
         struct AddTaskButton: View {
             @EnvironmentObject var tasksContainer: TasksContainer
             
+            @State private var showingSheet = false
+            
             let category: Category
             
             var body: some View {
                 Button {
-                    tasksContainer.tasks.append(Task(title: "", description: nil, status: .notStarted, category: category, tags: []))
-                    print(tasksContainer.tasks.count)
+                    showingSheet.toggle()
                 } label: {
                     HStack {
                         Spacer()
@@ -107,6 +108,12 @@ struct DailyTasksList: View {
                         Spacer()
                     }
                     .foregroundColor(category.color)
+                }
+                .sheet(isPresented: $showingSheet) {
+                    // TODO: onDismiss
+                    print("Dismissed!")
+                } content: {
+                    TaskEditView()
                 }
             }
         }

@@ -33,6 +33,10 @@
 		F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
 		F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266E27E25DD300CE26ED /* TasksContainer.swift */; };
 		F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266E27E25DD300CE26ED /* TasksContainer.swift */; };
+		F299267227E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
+		F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
+		F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
+		F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,8 @@
 		F299266727E2089600CE26ED /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		F299266B27E25B2400CE26ED /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		F299266E27E25DD300CE26ED /* TasksContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksContainer.swift; sourceTree = "<group>"; };
+		F299267127E28A8C00CE26ED /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
+		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +130,9 @@
 		F285777A27E11BDE00A812F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F285777B27E11CCE00A812F3 /* DailyTasksList.swift */,
 				F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */,
+				F285777B27E11CCE00A812F3 /* DailyTasksList.swift */,
+				F299267127E28A8C00CE26ED /* TaskEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,11 +140,11 @@
 		F299266227E2037200CE26ED /* Planning */ = {
 			isa = PBXGroup;
 			children = (
+				F299266E27E25DD300CE26ED /* TasksContainer.swift */,
+				F267EE4727E12F2A006CEDF8 /* Task.swift */,
 				F267EE4A27E12F6A006CEDF8 /* Category.swift */,
 				F267EE4D27E13003006CEDF8 /* Tag.swift */,
 				F267EE5027E130B5006CEDF8 /* Status.swift */,
-				F267EE4727E12F2A006CEDF8 /* Task.swift */,
-				F299266E27E25DD300CE26ED /* TasksContainer.swift */,
 			);
 			path = Planning;
 			sourceTree = "<group>";
@@ -154,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				F299266B27E25B2400CE26ED /* Color+Codable.swift */,
+				F299267527E2957300CE26ED /* Binding+Optionals.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -259,6 +267,8 @@
 				F299266827E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4E27E13003006CEDF8 /* Tag.swift in Sources */,
 				F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */,
+				F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */,
+				F299267227E28A8C00CE26ED /* TaskEditView.swift in Sources */,
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F267EE5127E130B5006CEDF8 /* Status.swift in Sources */,
@@ -278,6 +288,8 @@
 				F299266927E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4F27E13003006CEDF8 /* Tag.swift in Sources */,
 				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
+				F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */,
+				F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */,
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
