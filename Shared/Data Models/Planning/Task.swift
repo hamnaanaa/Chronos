@@ -13,13 +13,13 @@ struct Task: Identifiable, Codable {
     var title: String
     var description: String?
     var status: Status
-    var category: Category
+    var category: Category?
     var tags: [Tag]
-    var dateDue: Date
+    var dateDue: Date?
     var dateCreated: Date
     
     
-    init(title: String, description: String?, status: Status, category: Category, tags: [Tag], dateDue: Date, dateCreated: Date = .now) {
+    init(title: String, description: String?, status: Status, category: Category?, tags: [Tag], dateDue: Date? = nil, dateCreated: Date = .now) {
         self.title = title
         self.description = description
         self.status = status

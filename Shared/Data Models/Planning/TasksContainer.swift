@@ -9,8 +9,40 @@ import Foundation
 import SwiftUI
 
 class TasksContainer: ObservableObject {
+    // TODO: make private(set)?
     @Published var tasks: [Task] = []
     
+    /// Save all tasks into persistent storage
+    /// - Parameters:
+    ///   - completion: handler that accepts either the number of saved tasks or an error
+    func saveAll(completion: ((Result<Int, Error>) -> Void)? = nil) {
+        // TODO: Add improved filter logic here? E.g. no empty tasks
+        
+        DispatchQueue.global(qos: .background).async {
+            do {
+                let data = try JSONEncoder().encode(self.tasks)
+                let outfile = try TasksContainer.fileURL()
+                try data.write(to: outfile)
+                
+                if let completion = completion {
+                    DispatchQueue.main.async {
+                        completion(.success(self.tasks.count))
+                    }
+                }
+            } catch {
+                if let completion = completion {
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/// Persistency logic
+extension TasksContainer {
     private static func fileURL() throws -> URL {
         try FileManager.default.url(for: .documentDirectory,
                                        in: .userDomainMask,
@@ -60,31 +92,6 @@ class TasksContainer: ObservableObject {
             } catch {
                 DispatchQueue.main.async {
                     completion(.failure(error))
-                }
-            }
-        }
-    }
-    
-    /// Save all tasks into persistent storage
-    /// - Parameters:
-    ///   - completion: handler that accepts either the number of saved tasks or an error
-    func saveAll(completion: ((Result<Int, Error>) -> Void)? = nil) {
-        DispatchQueue.global(qos: .background).async {
-            do {
-                let data = try JSONEncoder().encode(self.tasks)
-                let outfile = try TasksContainer.fileURL()
-                try data.write(to: outfile)
-                
-                if let completion = completion {
-                    DispatchQueue.main.async {
-                        completion(.success(self.tasks.count))
-                    }
-                }
-            } catch {
-                if let completion = completion {
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
                 }
             }
         }

@@ -63,6 +63,7 @@ struct DailyTasksList: View {
             }
             .onChange(of: scenePhase) { phase in
                 print("[DEBUG: \(Date.now)] Saving all tasks into persistent storage")
+                // TODO: better logic for what to save?
                 if phase == .inactive { tasksContainer.saveAll() }
             }
         }
@@ -78,10 +79,10 @@ struct DailyTasksList: View {
         var body: some View {
             DisclosureGroup(isExpanded: $isExpanded) {
                 VStack {
-                    ForEach(tasksContainer.tasks.filter { $0.category.title == category.title }) { task in
+                    ForEach(tasksContainer.tasks.filter { $0.category?.title == category.title }) { task in
                         DailyTasksEntry(task: task, parentColor: category.color)
                     }
-                    AddTaskButton(color: category.color)
+                    AddTaskButton(category: category)
                 }
             } label: {
                 Text(category.title).foregroundColor(category.color)
@@ -91,11 +92,12 @@ struct DailyTasksList: View {
         struct AddTaskButton: View {
             @EnvironmentObject var tasksContainer: TasksContainer
             
-            let color: Color
+            let category: Category
             
             var body: some View {
                 Button {
-                    // TODO: implement
+                    tasksContainer.tasks.append(Task(title: "", description: nil, status: .notStarted, category: category, tags: []))
+                    print(tasksContainer.tasks.count)
                 } label: {
                     HStack {
                         Spacer()
@@ -104,7 +106,7 @@ struct DailyTasksList: View {
                         Spacer()
                         Spacer()
                     }
-                    .foregroundColor(color)
+                    .foregroundColor(category.color)
                 }
             }
         }
