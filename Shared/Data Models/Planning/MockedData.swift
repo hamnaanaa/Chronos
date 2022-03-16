@@ -24,5 +24,3 @@ class MockedTasks: ObservableObject {
         Task(title: "BT → Infrastructure Chapter", description: nil, status: .inPrograss, category: MockedCategories.education, tags: [], dateDue: .now, dateCreated: .now)
     ]
 }
-
-

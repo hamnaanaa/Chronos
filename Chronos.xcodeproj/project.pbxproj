@@ -29,6 +29,8 @@
 		F299266627E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
 		F299266827E2089600CE26ED /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266727E2089600CE26ED /* MockedData.swift */; };
 		F299266927E2089600CE26ED /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266727E2089600CE26ED /* MockedData.swift */; };
+		F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
+		F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,7 @@
 		F285777B27E11CCE00A812F3 /* DailyTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
 		F299266427E203AB00CE26ED /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		F299266727E2089600CE26ED /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		F299266B27E25B2400CE26ED /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,7 @@
 		F285775B27E11B9A00A812F3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F299266A27E25B1C00CE26ED /* Utils */,
 				F267EE4427E12E68006CEDF8 /* Data Models */,
 				F285777A27E11BDE00A812F3 /* Views */,
 				F285775C27E11B9A00A812F3 /* ChronosApp.swift */,
@@ -140,6 +144,14 @@
 				F299266427E203AB00CE26ED /* Emotion.swift */,
 			);
 			path = Reflecting;
+			sourceTree = "<group>";
+		};
+		F299266A27E25B1C00CE26ED /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F299266B27E25B2400CE26ED /* Color+Codable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +261,7 @@
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776E27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777C27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
+				F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776C27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +279,7 @@
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776F27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
+				F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776D27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

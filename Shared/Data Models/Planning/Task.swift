@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Task: Identifiable {
+class Task: Identifiable, Codable {
     var id = UUID()
     
     var title: String

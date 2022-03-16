@@ -8,7 +8,9 @@
 import Foundation
 import SwiftUI
 
-class Tag {
+class Tag: Identifiable, Codable {
+    var id = UUID()
+    
     var title: String
     var description: String
     var color: Color

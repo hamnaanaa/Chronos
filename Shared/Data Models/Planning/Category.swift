@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Category: Identifiable {
+class Category: Identifiable, Codable {
     var id = UUID()
     
     var title: String

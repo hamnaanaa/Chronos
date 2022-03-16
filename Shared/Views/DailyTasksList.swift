@@ -99,6 +99,7 @@ struct DailyTasksList: View {
         
         struct DailyTasksEntry: View {
             // TODO: add more complex checkmark logic here with more squares
+            // e.g. long press for failed
             @State private var isDone = false
             @State private var text = ""
             
