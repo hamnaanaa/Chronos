@@ -24,7 +24,8 @@ struct WeeklyTasksView: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(weekDays, id: \.self) { day in
                     VStack {
-                        DailyTasksList(tasksContainer: tasksContainer, day: day)
+                        DailyTasksList(day: day)
+                            .environmentObject(tasksContainer)
                             .frame(minHeight: 350)
                         // frame
 //                            .overlay(

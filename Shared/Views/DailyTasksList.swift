@@ -32,7 +32,7 @@ struct TextDivider: View {
 }
 
 struct DailyTasksList: View {
-    @ObservedObject var tasksContainer: MockedTasks
+    @EnvironmentObject var tasksContainer: MockedTasks
     
     let day: String
     
@@ -49,7 +49,7 @@ struct DailyTasksList: View {
                 Divider()
                 
                 ForEach(MockedCategories.allCategories) { category in
-                    DailyTasksSection(title: category.title, color: category.color)
+                    DailyTasksSection(category: category)
                 }
                 .padding([.leading, .trailing], 20)
                 
@@ -59,30 +59,22 @@ struct DailyTasksList: View {
     }
     
     struct DailyTasksSection: View {
+        @EnvironmentObject var tasksContainer: MockedTasks
+        
         @State private var isExpanded = false
         
-        let title: String
-        let color: Color
-        
-        // Fix it
-        //        @State private var sectionTasks: [String] = []
+        let category: Category
         
         var body: some View {
             DisclosureGroup(isExpanded: $isExpanded) {
                 VStack {
-                    // fix it
-                    //                    ForEach(sectionTasks, id: \.self) { sectionTask in
-                    //                        DailyTasksEntry(text: $sectionTasks, parentColor: color)
-                    //                    }
-                    AddTaskButton(color: color)
-                    AddTaskButton(color: color)
-                    AddTaskButton(color: color)
-                    AddTaskButton(color: color)
-                    AddTaskButton(color: color)
-                    AddTaskButton(color: color)
+                    ForEach(tasksContainer.allTasks.filter { $0.category.title == category.title }) { task in
+                        DailyTasksEntry(task: task, parentColor: category.color)
+                    }
+                    AddTaskButton(color: category.color)
                 }
             } label: {
-                Text(title).foregroundColor(color)
+                Text(category.title).foregroundColor(category.color)
             }
         }
         
@@ -108,11 +100,13 @@ struct DailyTasksList: View {
         struct DailyTasksEntry: View {
             // TODO: add more complex checkmark logic here with more squares
             @State private var isDone = false
+            @State private var text = ""
             
-            @Binding private var text: String
+            var task: Task
             
             let parentColor: Color
             
+            // TODO: if isDone -> ~text~ and other background color?
             var body: some View {
                 HStack {
                     Button {
@@ -120,6 +114,9 @@ struct DailyTasksList: View {
                     } label: {
                         Image(systemName: isDone ? "checkmark.square" : "square")
                     }
+                    
+                    // TODO: onChange update task!
+                    
                     TextField("", text: $text)
                     Spacer()
                 }
@@ -130,7 +127,8 @@ struct DailyTasksList: View {
 
 struct DailyTasksList_Previews: PreviewProvider {
     static var previews: some View {
-        DailyTasksList(tasksContainer: MockedTasks(), day: "Tuesday")
+        DailyTasksList(day: "Tuesday")
             .previewInterfaceOrientation(.landscapeLeft)
+            .environmentObject(MockedTasks())
     }
 }
