@@ -79,8 +79,8 @@ struct DailyTasksList: View {
         var body: some View {
             DisclosureGroup(isExpanded: $isExpanded) {
                 VStack {
-                    ForEach(tasksContainer.tasks.filter { $0.category?.title == category.title }) { task in
-                        DailyTasksEntry(task: task, parentColor: category.color)
+                    ForEach($tasksContainer.tasks) { $task in
+                        DailyTasksEntry(task: $task, parentColor: category.color)
                     }
                     AddTaskButton(category: category)
                 }
@@ -115,9 +115,8 @@ struct DailyTasksList: View {
             // TODO: add more complex checkmark logic here with more squares
             // e.g. long press for failed
             @State private var isDone = false
-            @State private var text = ""
             
-            var task: Task
+            @Binding var task: Task
             
             let parentColor: Color
             
@@ -125,6 +124,7 @@ struct DailyTasksList: View {
             var body: some View {
                 HStack {
                     Button {
+                        // TODO: use task binding with improved logic
                         isDone.toggle()
                     } label: {
                         Image(systemName: isDone ? "checkmark.square" : "square")
@@ -132,7 +132,7 @@ struct DailyTasksList: View {
                     
                     // TODO: onChange update task!
                     
-                    TextField("", text: $text)
+                    TextField("", text: $task.title)
                     Spacer()
                 }
                 .foregroundColor(parentColor)
