@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct WeeklyTasksView: View {
-    
-    @StateObject private var tasksContainer = MockedTasks()
+    @EnvironmentObject var tasksContainer: TasksContainer
     
     let columns = Array(repeating: GridItem(.flexible(), alignment: .top), count: 4)
     
@@ -25,7 +24,6 @@ struct WeeklyTasksView: View {
                 ForEach(weekDays, id: \.self) { day in
                     VStack {
                         DailyTasksList(day: day)
-                            .environmentObject(tasksContainer)
                             .frame(minHeight: 350)
                         // frame
 //                            .overlay(

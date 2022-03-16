@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var tasksContainer: TasksContainer
+    
     var body: some View {
         WeeklyTasksView()
     }

@@ -32,9 +32,15 @@ struct TextDivider: View {
 }
 
 struct DailyTasksList: View {
-    @EnvironmentObject var tasksContainer: MockedTasks
+    @EnvironmentObject var tasksContainer: TasksContainer
     
+    /// Associated day for this tasks list
     let day: String
+    
+//    /// Handler for persistently storing tasks from this view
+//    let saveAction: () -> Void
+    // Used to detect app inactivity to store the data persistenly
+    @Environment(\.scenePhase) private var scenePhase
     
     var body: some View {
             VStack {
@@ -55,11 +61,15 @@ struct DailyTasksList: View {
                 
                 Spacer()
             }
+            .onChange(of: scenePhase) { phase in
+                print("[DEBUG: \(Date.now)] Saving all tasks into persistent storage")
+                if phase == .inactive { tasksContainer.saveAll() }
+            }
         }
     }
     
     struct DailyTasksSection: View {
-        @EnvironmentObject var tasksContainer: MockedTasks
+        @EnvironmentObject var tasksContainer: TasksContainer
         
         @State private var isExpanded = false
         
@@ -68,7 +78,7 @@ struct DailyTasksList: View {
         var body: some View {
             DisclosureGroup(isExpanded: $isExpanded) {
                 VStack {
-                    ForEach(tasksContainer.allTasks.filter { $0.category.title == category.title }) { task in
+                    ForEach(tasksContainer.tasks.filter { $0.category.title == category.title }) { task in
                         DailyTasksEntry(task: task, parentColor: category.color)
                     }
                     AddTaskButton(color: category.color)
@@ -79,6 +89,8 @@ struct DailyTasksList: View {
         }
         
         struct AddTaskButton: View {
+            @EnvironmentObject var tasksContainer: TasksContainer
+            
             let color: Color
             
             var body: some View {
@@ -130,6 +142,6 @@ struct DailyTasksList_Previews: PreviewProvider {
     static var previews: some View {
         DailyTasksList(day: "Tuesday")
             .previewInterfaceOrientation(.landscapeLeft)
-            .environmentObject(MockedTasks())
+            .environmentObject(TasksContainer())
     }
 }

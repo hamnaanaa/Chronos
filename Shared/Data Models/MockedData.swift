@@ -18,9 +18,9 @@ enum MockedCategories {
     static var organisation = Category(title: "Organisation", iconName: "gear.circle", color: .orange)
 }
 
-class MockedTasks: ObservableObject {
-    @Published var allTasks = [
-        Task(title: "QM -> Daily [07.03.22]", description: nil, status: .done, category: MockedCategories.work, tags: [], dateDue: .now, dateCreated: .now),
-        Task(title: "BT → Infrastructure Chapter", description: nil, status: .inPrograss, category: MockedCategories.education, tags: [], dateDue: .now, dateCreated: .now)
-    ]
-}
+//class MockedTasksContainer: TasksContainer {
+//    @Published override var tasks = [
+//        Task(title: "QM -> Daily [07.03.22]", description: nil, status: .done, category: MockedCategories.work, tags: [], dateDue: .now, dateCreated: .now),
+//        Task(title: "BT → Infrastructure Chapter", description: nil, status: .inPrograss, category: MockedCategories.education, tags: [], dateDue: .now, dateCreated: .now)
+//    ]
+//}
