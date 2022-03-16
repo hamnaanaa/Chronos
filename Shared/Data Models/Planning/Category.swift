@@ -6,13 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 
-class Category {
+class Category: Identifiable {
+    var id = UUID()
+    
     var title: String
     var iconName: String
+    var color: Color
     
-    init(title: String, iconName: String) {
+    init(title: String, iconName: String, color: Color) {
         self.title = title
         self.iconName = iconName
+        self.color = color
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WeeklyTasksView: View {
     
+    @StateObject private var tasksContainer = MockedTasks()
+    
     let columns = Array(repeating: GridItem(.flexible(), alignment: .top), count: 4)
     
     let weekDays = [
@@ -22,7 +24,7 @@ struct WeeklyTasksView: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(weekDays, id: \.self) { day in
                     VStack {
-                        DailyTasksList(day: day)
+                        DailyTasksList(tasksContainer: tasksContainer, day: day)
                             .frame(minHeight: 350)
                         // frame
 //                            .overlay(

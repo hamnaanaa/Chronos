@@ -32,16 +32,7 @@ struct TextDivider: View {
 }
 
 struct DailyTasksList: View {
-    private let data = [
-        "Productivity": Color.purple,
-        "Work & Finances": .indigo,
-        "Organisation": .orange,
-        "Free Time": .green
-    ]
-    
-    @State private var presentedGroups = Array(
-        repeating: false,
-        count: 4)
+    @ObservedObject var tasksContainer: MockedTasks
     
     let day: String
     
@@ -57,8 +48,8 @@ struct DailyTasksList: View {
                 
                 Divider()
                 
-                ForEach(data.sorted(by: { $0.key > $1.key }), id: \.key) { entry in
-                    DailyTasksSection(title: entry.key, color: entry.value)
+                ForEach(MockedCategories.allCategories) { category in
+                    DailyTasksSection(title: category.title, color: category.color)
                 }
                 .padding([.leading, .trailing], 20)
                 
@@ -139,7 +130,7 @@ struct DailyTasksList: View {
 
 struct DailyTasksList_Previews: PreviewProvider {
     static var previews: some View {
-        DailyTasksList(day: "Tuesday")
+        DailyTasksList(tasksContainer: MockedTasks(), day: "Tuesday")
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

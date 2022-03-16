@@ -11,7 +11,7 @@ class Task: Identifiable {
     var id = UUID()
     
     var title: String
-    var description: String
+    var description: String?
     var status: Status
     var category: Category
     var tags: [Tag]
@@ -19,7 +19,7 @@ class Task: Identifiable {
     var dateCreated: Date
     
     
-    init(title: String, description: String, status: Status, category: Category, tags: [Tag], dateDue: Date, dateCreated: Date = .now) {
+    init(title: String, description: String?, status: Status, category: Category, tags: [Tag], dateDue: Date, dateCreated: Date = .now) {
         self.title = title
         self.description = description
         self.status = status

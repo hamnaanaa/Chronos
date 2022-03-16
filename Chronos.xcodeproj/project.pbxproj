@@ -27,6 +27,8 @@
 		F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285777B27E11CCE00A812F3 /* DailyTasksList.swift */; };
 		F299266527E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
 		F299266627E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
+		F299266827E2089600CE26ED /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266727E2089600CE26ED /* MockedData.swift */; };
+		F299266927E2089600CE26ED /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266727E2089600CE26ED /* MockedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,7 @@
 		F285776B27E11B9A00A812F3 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F285777B27E11CCE00A812F3 /* DailyTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
 		F299266427E203AB00CE26ED /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		F299266727E2089600CE26ED /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 				F267EE4D27E13003006CEDF8 /* Tag.swift */,
 				F267EE5027E130B5006CEDF8 /* Status.swift */,
 				F267EE4727E12F2A006CEDF8 /* Task.swift */,
+				F299266727E2089600CE26ED /* MockedData.swift */,
 			);
 			path = Planning;
 			sourceTree = "<group>";
@@ -236,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F299266827E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4E27E13003006CEDF8 /* Tag.swift in Sources */,
 				F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */,
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
@@ -252,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F299266927E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4F27E13003006CEDF8 /* Tag.swift in Sources */,
 				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
