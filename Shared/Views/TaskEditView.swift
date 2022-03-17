@@ -33,10 +33,6 @@ struct TaskEditView: View {
                 
                 taskDescription
                 
-                Button("Done") {
-                    dismiss()
-                }
-                
                 Spacer()
             }
             .padding()
@@ -123,12 +119,6 @@ struct TaskEditView: View {
     // TODO: make it take the whole space!
     var taskDescription: some View {
         TextEditor(text: $task.description ?? "")
-            .frame(
-                  minWidth: 0,
-                  maxWidth: .infinity,
-                  minHeight: 0,
-                  maxHeight: .infinity
-            )
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(.black)

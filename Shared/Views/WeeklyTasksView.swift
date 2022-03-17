@@ -25,11 +25,6 @@ struct WeeklyTasksView: View {
                     VStack {
                         DailyTasksList(day: day)
                             .frame(minHeight: 350)
-                        // frame
-//                            .overlay(
-//                                RoundedRectangle(cornerRadius: 8)
-//                                    .stroke(.secondary, lineWidth: 2)
-//                            )
                         Spacer()
                     }
                 }

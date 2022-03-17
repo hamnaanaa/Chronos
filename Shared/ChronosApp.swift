@@ -19,7 +19,11 @@ struct ChronosApp: App {
                     TasksContainer.load { result in
                         switch result {
                         case .failure(let error):
-                            fatalError(String(describing: error))
+                            print("[ERROR] Could not load data from persistent storage. Reason: \(String(describing: error))")
+                            // couldn't load data from persistent storage -> initialize empty list
+                            tasksContainer.tasks = []
+                            // too aggresive
+                            // fatalError(String(describing: error))
                         case .success(let tasks):
                             tasksContainer.tasks = tasks
                         }
