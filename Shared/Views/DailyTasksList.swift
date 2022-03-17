@@ -80,7 +80,7 @@ struct DailyTasksSection: View {
         DisclosureGroup(isExpanded: $isExpanded) {
             VStack {
                 ForEach($tasksContainer.tasks) { $task in
-                    DailyTasksEntry(task: $task, parentColor: category.color)
+                    DailyTasksEntry(task: $task)
                 }
                 AddTaskButton(category: category)
             }
@@ -93,7 +93,7 @@ struct DailyTasksSection: View {
         @EnvironmentObject var tasksContainer: TasksContainer
         
         /// A flag for displayed an edit sheet for a new task
-        @State private var showingSheet = false
+        @State private var showingAddSheet = false
         /// An empty task to be edited if the `AddTaskButton` is pressed
         @State private var newTask = Task(title: "", description: nil, status: .notStarted, category: nil, tags: [], dateDue: nil, dateCreated: .now)
         
@@ -101,7 +101,8 @@ struct DailyTasksSection: View {
         
         var body: some View {
             Button {
-                showingSheet.toggle()
+                newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
+                showingAddSheet.toggle()
             } label: {
                 HStack {
                     Spacer()
@@ -112,7 +113,7 @@ struct DailyTasksSection: View {
                 }
                 .foregroundColor(category.color)
             }
-            .sheet(isPresented: $showingSheet) {
+            .sheet(isPresented: $showingAddSheet) {
                 NavigationView {
                     TaskEditView(task: $newTask)
                         .navigationBarTitleDisplayMode(.inline)
@@ -120,15 +121,15 @@ struct DailyTasksSection: View {
                             ToolbarItem(placement: .cancellationAction) {
                                 // hide the sheet and reset the new task
                                 Button("Dismiss") {
-                                    showingSheet = false
-                                    newTask = Task(title: "", description: nil, status: .notStarted, category: nil, tags: [], dateDue: nil, dateCreated: .now)
+                                    showingAddSheet = false
+                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
                                 }
                             }
                             ToolbarItem(placement: .confirmationAction) {
                                 Button("Add") {
                                     tasksContainer.tasks.append(newTask)
-                                    showingSheet = false
-                                    newTask = Task(title: "", description: nil, status: .notStarted, category: nil, tags: [], dateDue: nil, dateCreated: .now)
+                                    showingAddSheet = false
+                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
                                 }
                             }
                         }
@@ -142,9 +143,9 @@ struct DailyTasksSection: View {
         // e.g. long press for failed
         @State private var isDone = false
         
-        @Binding var task: Task
+        @State private var showingEditSheet = false
         
-        let parentColor: Color
+        @Binding var task: Task
         
         // TODO: if isDone -> ~text~ and other background color?
         var body: some View {
@@ -156,12 +157,16 @@ struct DailyTasksSection: View {
                     Image(systemName: isDone ? "checkmark.square" : "square")
                 }
                 
-                // TODO: onChange update task!
-                
                 TextField("", text: $task.title)
+                    .onLongPressGesture {
+                        showingEditSheet = true
+                    }
                 Spacer()
             }
-            .foregroundColor(parentColor)
+            .foregroundColor(task.category?.color)
+            .sheet(isPresented: $showingEditSheet) {
+                TaskEditView(task: $task)
+            }
         }
     }
 }
