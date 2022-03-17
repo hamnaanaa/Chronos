@@ -12,12 +12,12 @@ enum Status: String, CaseIterable, Codable {
     
     static var allCases: [Status] = [notStarted, inPrograss, done, postponed, missed, cancelled]
     
-    case notStarted
-    case inPrograss
-    case done
-    case postponed
-    case missed
-    case cancelled
+    case notStarted = "not started"
+    case inPrograss = "in progress"
+    case done = "done"
+    case postponed = "postponed"
+    case missed = "missed"
+    case cancelled = "cancelled"
     
     var color: Color {
         switch self {
