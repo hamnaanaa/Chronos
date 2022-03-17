@@ -124,6 +124,7 @@ struct DailyTasksSection: View {
                                     showingAddSheet = false
                                     newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
                                 }
+                                .buttonStyle(.bordered)
                             }
                             ToolbarItem(placement: .confirmationAction) {
                                 Button("Add") {
@@ -131,6 +132,7 @@ struct DailyTasksSection: View {
                                     showingAddSheet = false
                                     newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
                                 }
+                                .buttonStyle(.bordered)
                             }
                         }
                 }
@@ -139,6 +141,8 @@ struct DailyTasksSection: View {
     }
     
     struct DailyTasksEntry: View {
+        @EnvironmentObject var tasksContainer: TasksContainer
+        
         // TODO: add more complex checkmark logic here with more squares
         // e.g. long press for failed
         @State private var isDone = false
@@ -165,7 +169,20 @@ struct DailyTasksSection: View {
             }
             .foregroundColor(task.category?.color)
             .sheet(isPresented: $showingEditSheet) {
-                TaskEditView(task: $task)
+                NavigationView {
+                    TaskEditView(task: $task)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                // hide the sheet and reset the new task
+                                Button("Delete", role: .destructive) {
+                                    showingEditSheet = false
+                                    tasksContainer.tasks.removeAll(where: { $0.id == task.id })
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                        .navigationBarTitleDisplayMode(.inline)
+                }
             }
         }
     }
