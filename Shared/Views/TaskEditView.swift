@@ -84,18 +84,14 @@ struct TaskEditView: View {
     var taskDue: some View {
         HStack {
             Spacer()
-            VStack {
-                Text("Due")
-                    .font(.title2.bold())
-                
-                if let dateDue = task.dateDue {
-                    Text(dateDue, style: .date)
-                        .font(.title3)
-                } else {
-                    Text("-")
-                        .font(.title3)
-                }
-                
+                VStack {
+                    Text("Due")
+                        .font(.title2.bold())
+                        .padding(.bottom, -2)
+
+                    DatePicker("label", selection: $task.dateDue ?? .now, displayedComponents: .date)
+                        .datePickerStyle(.compact)
+                    .labelsHidden()
             }
             Spacer()
         }
@@ -104,13 +100,14 @@ struct TaskEditView: View {
     var taskCreated: some View {
         HStack {
             Spacer()
-            VStack {
-                Text("Created")
-                    .font(.title2.bold())
-                
-                Text(task.dateCreated, style: .date)
-                    .font(.title3)
-                
+                VStack {
+                    Text("Created")
+                        .font(.title2.bold())
+                        .padding(.bottom, -2)
+
+                    DatePicker("label", selection: $task.dateCreated, displayedComponents: .date)
+                        .datePickerStyle(.compact)
+                    .labelsHidden()
             }
             Spacer()
         }
@@ -128,7 +125,7 @@ struct TaskEditView: View {
 
 struct TaskEditView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", description: nil, status: .inPrograss, category: MockedCategories.work, tags: [], dateDue: .now, dateCreated: .now)))
+        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", description: nil, status: .inPrograss, category: MockedCategories.work, tags: [], dateDue: nil, dateCreated: .now)))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
