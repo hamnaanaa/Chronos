@@ -37,13 +37,10 @@ struct DailyTasksList: View {
     /// Associated day for this tasks list
     let day: String
     
-    //    /// Handler for persistently storing tasks from this view
-    //    let saveAction: () -> Void
-    // Used to detect app inactivity to store the data persistenly
-    @Environment(\.scenePhase) private var scenePhase
-    
     var body: some View {
         VStack {
+            // day title section
+            
             HStack {
                 Spacer()
                 Text(day)
@@ -54,17 +51,68 @@ struct DailyTasksList: View {
             
             Divider()
             
-            ForEach(MockedCategories.allCategories) { category in
+            // categories section
+            
+            ForEach(tasksContainer.categories.sorted(by: { $0.title < $1.title })) { category in
                 DailyTasksSection(category: category)
             }
             .padding([.leading, .trailing], 20)
             
+            // Add category button
+            
+            AddCategoryButton()
+            
+            
             Spacer()
         }
-        .onChange(of: scenePhase) { phase in
-            print("[DEBUG: \(Date.now)] Saving all tasks into persistent storage")
-            // TODO: better logic for what to save?
-            if phase == .inactive { tasksContainer.saveAll() }
+    }
+    
+    struct AddCategoryButton: View {
+        @EnvironmentObject var tasksContainer: TasksContainer
+        
+        /// A flag for displayed an edit sheet for a new category
+        @State private var showingAddSheet = false
+        /// A category to be edited if the `AddCategoryButton` is pressed
+        @State private var newCategory = Category(title: "", iconName: "circle.circle", color: .red)
+        
+        // TODO: add icon selection functionality here
+        var body: some View {
+            Button {
+                showingAddSheet.toggle()
+            } label: {
+                HStack {
+                    Spacer()
+                    Image(systemName: "plus")
+                    Text("New Category")
+                    Spacer()
+                }
+                .foregroundColor(.gray)
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                NavigationView {
+                    CategoryEditView(category: $newCategory)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                // hide the sheet and reset the new task
+                                Button("Dismiss") {
+                                    showingAddSheet = false
+                                    newCategory = Category(title: "", iconName: "circle.circle", color: .red)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                            ToolbarItem(placement: .confirmationAction) {
+                                // TODO: add a check for existing category here
+                                Button("Add") {
+                                    tasksContainer.addCategory(category: newCategory)
+                                    showingAddSheet = false
+                                    newCategory = Category(title: "", iconName: "circle.circle", color: .red)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                }
+            }
         }
     }
 }
@@ -128,7 +176,7 @@ struct DailyTasksSection: View {
                             }
                             ToolbarItem(placement: .confirmationAction) {
                                 Button("Add") {
-                                    tasksContainer.tasks.append(newTask)
+                                    tasksContainer.addTask(task: newTask)
                                     showingAddSheet = false
                                     newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
                                 }
@@ -176,7 +224,7 @@ struct DailyTasksSection: View {
                                 // hide the sheet and reset the new task
                                 Button("Delete", role: .destructive) {
                                     showingEditSheet = false
-                                    tasksContainer.tasks.removeAll(where: { $0.id == task.id })
+                                    tasksContainer.removeTask(task: task)
                                 }
                                 .buttonStyle(.bordered)
                             }

@@ -10,6 +10,11 @@ import SwiftUI
 struct WeeklyTasksView: View {
     @EnvironmentObject var tasksContainer: TasksContainer
     
+    //    /// Handler for persistently storing tasks from this view
+    //    let saveAction: () -> Void
+    // Used to detect app inactivity to store the data persistenly
+    @Environment(\.scenePhase) private var scenePhase
+    
     let columns = Array(repeating: GridItem(.flexible(), alignment: .top), count: 4)
     
     let weekDays = [
@@ -30,6 +35,11 @@ struct WeeklyTasksView: View {
                 }
             }
             .padding()
+            .onChange(of: scenePhase) { phase in
+                print("[DEBUG: \(Date.now)] Saving all tasks into persistent storage")
+                // TODO: better logic for what to save?
+                if phase == .inactive { tasksContainer.saveAll() }
+            }
         }
     }
 }

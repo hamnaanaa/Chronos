@@ -10,7 +10,6 @@ import SwiftUI
 struct TaskEditView: View {
     @Environment(\.dismiss) private var dismiss
     
-    // TODO: where to take it from?
     @Binding var task: Task
     
     var body: some View {

@@ -37,6 +37,8 @@
 		F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
 		F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
 		F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
+		F299267927E54CE600CE26ED /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267827E54CE600CE26ED /* CategoryEditView.swift */; };
+		F299267A27E54CE600CE26ED /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267827E54CE600CE26ED /* CategoryEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,7 @@
 		F299266E27E25DD300CE26ED /* TasksContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksContainer.swift; sourceTree = "<group>"; };
 		F299267127E28A8C00CE26ED /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
+		F299267827E54CE600CE26ED /* CategoryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,7 @@
 				F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */,
 				F285777B27E11CCE00A812F3 /* DailyTasksList.swift */,
 				F299267127E28A8C00CE26ED /* TaskEditView.swift */,
+				F299267827E54CE600CE26ED /* CategoryEditView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +270,7 @@
 			files = (
 				F299266827E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4E27E13003006CEDF8 /* Tag.swift in Sources */,
+				F299267927E54CE600CE26ED /* CategoryEditView.swift in Sources */,
 				F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */,
 				F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */,
 				F299267227E28A8C00CE26ED /* TaskEditView.swift in Sources */,
@@ -287,6 +292,7 @@
 			files = (
 				F299266927E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4F27E13003006CEDF8 /* Tag.swift in Sources */,
+				F299267A27E54CE600CE26ED /* CategoryEditView.swift in Sources */,
 				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
 				F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */,
 				F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */,
