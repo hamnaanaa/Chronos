@@ -115,11 +115,16 @@ struct TaskEditView: View {
     
     // TODO: make it take the whole space!
     var taskDescription: some View {
-        TextEditor(text: $task.description ?? "")
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(.black)
-            )
+        VStack {
+            Divider()
+                .padding(.bottom)
+            TextEditor(text: $task.description ?? "")
+                .frame(height: 450)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(.gray)
+                )
+        }
     }
 }
 
