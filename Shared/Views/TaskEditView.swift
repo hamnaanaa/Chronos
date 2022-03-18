@@ -31,6 +31,8 @@ struct TaskEditView: View {
                 }
                 .padding()
                 
+                // TODO: add tags horizontal grid here
+                
                 taskDescription
                 
                 Spacer()
@@ -68,16 +70,26 @@ struct TaskEditView: View {
     }
     
     var taskStatus: some View {
-        HStack {
-            Spacer()
-            VStack {
-                Text("Status")
-                    .font(.title2.bold())
-                Text(task.status.name)
-                    .font(.title3)
-                    .foregroundColor(task.status.color)
+        Menu {
+            Picker(selection: $task.status, label: EmptyView()) {
+                ForEach(Status.allCases, id: \.self) { statusOption in
+                    Text(statusOption.name)
+                        .tag(statusOption)
+                }
             }
-            Spacer()
+        } label: {
+            HStack {
+                Spacer()
+                VStack {
+                    Text("Status")
+                        .font(.title2.bold())
+                        .foregroundColor(.primary)
+                    Text(task.status.name)
+                        .font(.title3)
+                        .foregroundColor(task.status.color)
+                }
+                Spacer()
+            }
         }
     }
     

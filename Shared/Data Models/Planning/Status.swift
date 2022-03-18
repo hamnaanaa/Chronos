@@ -8,10 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Status: String, CaseIterable, Codable {
-    
-    static var allCases: [Status] = [notStarted, inPrograss, done, postponed, missed, cancelled]
-    
+enum Status: String, CaseIterable, Codable {    
     case notStarted = "not started"
     case inPrograss = "in progress"
     case done = "done"
