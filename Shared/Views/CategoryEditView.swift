@@ -13,7 +13,32 @@ struct CategoryEditView: View {
     @Binding var category: Category
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                categoryTitle
+                    .padding()
+                
+                categoryColorGrid
+            }
+            .padding()
+        }
+    }
+    
+    var categoryTitle: some View {
+        HStack {
+            Spacer()
+            TextField("Category title", text: $category.title)
+                .font(.title.bold())
+            Spacer()
+        }
+    }
+    
+    var categoryColorGrid: some View {
+        HStack {
+            ForEach(Color.TextColor.allColors, id: \.self) { color in
+                RoundedRectangle(cornerRadius: 24).foregroundColor(color)
+            }
+        }
     }
 }
 

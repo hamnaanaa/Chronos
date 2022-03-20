@@ -43,7 +43,7 @@ struct TaskEditView: View {
     var taskTitle: some View {
         HStack {
             Spacer()
-            TextField("title", text: $task.title)
+            TextField("Task title", text: $task.title)
                 .font(.title.bold())
             Spacer()
         }
