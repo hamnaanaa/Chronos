@@ -130,11 +130,15 @@ struct DailyTasksSection: View {
                 ForEach($tasksContainer.tasks) { $task in
                     DailyTasksEntry(task: $task)
                 }
+                .padding(.vertical, 4)
+                
                 AddTaskButton(category: category)
             }
         } label: {
-            Text(category.title).foregroundColor(category.color)
+            Label(category.title, systemImage: category.iconName)
+                .font(.headline)
         }
+        .accentColor(category.color)
     }
     
     struct AddTaskButton: View {

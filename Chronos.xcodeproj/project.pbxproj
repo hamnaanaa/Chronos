@@ -41,6 +41,8 @@
 		F299267A27E54CE600CE26ED /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267827E54CE600CE26ED /* CategoryEditView.swift */; };
 		F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
+		F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
+		F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,7 @@
 		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
 		F299267827E54CE600CE26ED /* CategoryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditView.swift; sourceTree = "<group>"; };
 		F2F0825E27E7E1F60035D461 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,7 @@
 				F285777B27E11CCE00A812F3 /* DailyTasksList.swift */,
 				F299267127E28A8C00CE26ED /* TaskEditView.swift */,
 				F299267827E54CE600CE26ED /* CategoryEditView.swift */,
+				F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +289,7 @@
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776E27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777C27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
+				F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */,
 				F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */,
 				F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776C27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
@@ -308,6 +313,7 @@
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776F27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
+				F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */,
 				F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */,
 				F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776D27E11B9A00A812F3 /* ChronosApp.swift in Sources */,

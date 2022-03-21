@@ -13,14 +13,15 @@ struct CategoryEditView: View {
     @Binding var category: Category
     
     var body: some View {
-        ScrollView {
-            VStack {
+        Form {
+            Section("Title") {
                 categoryTitle
                     .padding()
-                
-                categoryColorGrid
             }
-            .padding()
+            
+            Section("Color") {
+                ColorSelectorView(selectedColor: $category.color)
+            }
         }
     }
     
@@ -30,14 +31,6 @@ struct CategoryEditView: View {
             TextField("Category title", text: $category.title)
                 .font(.title.bold())
             Spacer()
-        }
-    }
-    
-    var categoryColorGrid: some View {
-        HStack {
-            ForEach(Color.BackgroundColor.allColors, id: \.self) { color in
-                RoundedRectangle(cornerRadius: 24).foregroundColor(color)
-            }
         }
     }
 }

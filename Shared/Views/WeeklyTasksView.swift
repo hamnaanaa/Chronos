@@ -18,7 +18,7 @@ struct WeeklyTasksView: View {
     let columns = Array(repeating: GridItem(.flexible(), alignment: .top), count: 4)
     
     let weekDays = [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "ANY"
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Any Day"
     ]
     
     // TODO: add animation. Press on day and it zooms into fullscreen mode
