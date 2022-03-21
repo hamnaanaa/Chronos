@@ -35,6 +35,14 @@ class TasksContainer: ObservableObject {
         self.tasks.removeAll(where: { $0.id == task.id })
     }
     
+    func tasks(for filter: (Task) -> Bool) -> [Task] {
+        tasks.filter(filter)
+    }
+    
+    func tasks(for category: Category) -> [Task] {
+        tasks.filter { $0.category == category }
+    }
+    
     func addCategory(category: Category) {
         categories.update(with: category)
     }

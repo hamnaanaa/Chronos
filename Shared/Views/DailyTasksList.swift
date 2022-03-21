@@ -128,7 +128,9 @@ struct DailyTasksSection: View {
         DisclosureGroup(isExpanded: $isExpanded) {
             VStack {
                 ForEach($tasksContainer.tasks) { $task in
-                    DailyTasksEntry(task: $task)
+                    if isFittingTask(task) {
+                        DailyTasksEntry(task: $task)
+                    }
                 }
                 .padding(.vertical, 4)
                 
@@ -139,6 +141,11 @@ struct DailyTasksSection: View {
                 .font(.headline)
         }
         .accentColor(category.color)
+    }
+    
+    /// Helper function to test if the given task belongs to this `DailyTasksSection`
+    private func isFittingTask(_ task: Task) -> Bool {
+        task.category == category
     }
     
     struct AddTaskButton: View {
