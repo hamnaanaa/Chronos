@@ -35,7 +35,7 @@ struct CategoryEditView: View {
     
     var categoryColorGrid: some View {
         HStack {
-            ForEach(Color.TextColor.allColors, id: \.self) { color in
+            ForEach(Color.BackgroundColor.allColors, id: \.self) { color in
                 RoundedRectangle(cornerRadius: 24).foregroundColor(color)
             }
         }

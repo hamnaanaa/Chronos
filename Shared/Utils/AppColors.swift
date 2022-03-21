@@ -10,7 +10,7 @@ import SwiftUI
 /// An extension for `Color` adding app-specific colors for different elements (Text/Background/Selection)
 extension Color {
 
-    /// App-specific colors for displaying `Text`
+    /// App-specific colors for displaying text
     struct TextColor {
         static let blue = Color("TextBlue")
         static let brown = Color("TextBrown")
@@ -38,13 +38,31 @@ extension Color {
         }
     }
     
-    // TODO: continue here
+    /// App-specific colors for displaying background
     struct BackgroundColor {
+        static let blue = Color("BGBlue")
+        static let brown = Color("BGBrown")
+        static let gray = Color("BGGray")
+        static let green = Color("BGGreen")
+        static let orange = Color("BGOrange")
+        static let pink = Color("BGPink")
+        static let primary = Color("BGPrimary")
+        static let purple = Color("BGPurple")
+        static let red = Color("BGRed")
+        static let yellow = Color("BGYellow")
         
-    }
-    
-    // TODO: continue here
-    struct SelectColor {
-        
+        /// List of all supported `BackgroundColor` values
+        static var allColors: [Color] {
+            [BackgroundColor.blue,
+             BackgroundColor.brown,
+             BackgroundColor.gray,
+             BackgroundColor.green,
+             BackgroundColor.orange,
+             BackgroundColor.pink,
+             BackgroundColor.primary,
+             BackgroundColor.purple,
+             BackgroundColor.red,
+             BackgroundColor.yellow]
+        }
     }
 }
