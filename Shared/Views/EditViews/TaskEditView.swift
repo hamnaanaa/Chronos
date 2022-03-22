@@ -13,30 +13,33 @@ struct TaskEditView: View {
     @Binding var task: Task
     
     var body: some View {
-        ScrollView {
-            VStack {
+        Form {
+            Section("Task Title") {
                 taskTitle
                     .padding()
-                
+            }
+            
+            Section("Category and Status") {
                 HStack {
                     taskCategory
                     taskStatus
                 }
                 .padding()
-                
+            }
+            
+            Section("Dates") {
                 HStack {
                     taskDue
                     taskCreated
                 }
                 .padding()
-                
-                // TODO: add tags horizontal grid here
-                
-                taskDescription
-                
-                Spacer()
             }
-            .padding()
+            
+            // TODO: add tags horizontal grid for epics here
+            
+            Section("Task Description") {
+                taskDescription
+            }
         }
     }
     
@@ -95,13 +98,13 @@ struct TaskEditView: View {
     var taskDue: some View {
         HStack {
             Spacer()
-                VStack {
-                    Text("Due")
-                        .font(.title2.bold())
-                        .padding(.bottom, -2)
-
-                    DatePicker("label", selection: $task.dateDue ?? .now, displayedComponents: .date)
-                        .datePickerStyle(.compact)
+            VStack {
+                Text("Due")
+                    .font(.title2.bold())
+                    .padding(.bottom, -2)
+                
+                DatePicker("label", selection: $task.dateDue ?? .now, displayedComponents: .date)
+                    .datePickerStyle(.compact)
                     .labelsHidden()
             }
             Spacer()
@@ -111,13 +114,13 @@ struct TaskEditView: View {
     var taskCreated: some View {
         HStack {
             Spacer()
-                VStack {
-                    Text("Created")
-                        .font(.title2.bold())
-                        .padding(.bottom, -2)
-
-                    DatePicker("label", selection: $task.dateCreated, displayedComponents: .date)
-                        .datePickerStyle(.compact)
+            VStack {
+                Text("Created")
+                    .font(.title2.bold())
+                    .padding(.bottom, -2)
+                
+                DatePicker("label", selection: $task.dateCreated, displayedComponents: .date)
+                    .datePickerStyle(.compact)
                     .labelsHidden()
             }
             Spacer()
@@ -126,16 +129,8 @@ struct TaskEditView: View {
     
     // TODO: make it take the whole space!
     var taskDescription: some View {
-        VStack {
-            Divider()
-                .padding(.bottom)
-            TextEditor(text: $task.description ?? "")
-                .frame(height: 450)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(.gray)
-                )
-        }
+        TextEditor(text: $task.description ?? "")
+            .frame(height: 250)
     }
 }
 
