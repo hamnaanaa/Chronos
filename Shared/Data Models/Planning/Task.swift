@@ -14,17 +14,17 @@ struct Task: Identifiable, Codable {
     var description: String?
     var status: Status
     var category: Category?
-    var tags: [Tag]
+    var epics: [Epic]
     var dateDue: Date?
     var dateCreated: Date
     
     
-    init(title: String, description: String?, status: Status, category: Category?, tags: [Tag], dateDue: Date? = nil, dateCreated: Date = .now) {
+    init(title: String, description: String?, status: Status, category: Category?, epics: [Epic], dateDue: Date? = nil, dateCreated: Date = .now) {
         self.title = title
         self.description = description
         self.status = status
         self.category = category
-        self.tags = tags
+        self.epics = epics
         self.dateDue = dateDue
         self.dateCreated = dateCreated
     }

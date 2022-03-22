@@ -141,7 +141,7 @@ struct TaskEditView: View {
 
 struct TaskEditView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", description: nil, status: .inPrograss, category: MockedCategories.work, tags: [], dateDue: nil, dateCreated: .now)))
+        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", description: nil, status: .inPrograss, category: MockedCategories.work, epics: [], dateDue: nil, dateCreated: .now)))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

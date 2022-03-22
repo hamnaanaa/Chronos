@@ -154,13 +154,13 @@ struct DailyTasksSection: View {
         /// A flag for displayed an edit sheet for a new task
         @State private var showingAddSheet = false
         /// An empty task to be edited if the `AddTaskButton` is pressed
-        @State private var newTask = Task(title: "", description: nil, status: .notStarted, category: nil, tags: [], dateDue: nil, dateCreated: .now)
+        @State private var newTask = Task(title: "", description: nil, status: .notStarted, category: nil, epics: [], dateDue: nil, dateCreated: .now)
         
         let category: Category
         
         var body: some View {
             Button {
-                newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
+                newTask = Task(title: "", description: nil, status: .notStarted, category: category, epics: [], dateDue: nil, dateCreated: .now)
                 showingAddSheet.toggle()
             } label: {
                 HStack {
@@ -181,7 +181,7 @@ struct DailyTasksSection: View {
                                 // hide the sheet and reset the new task
                                 Button("Dismiss") {
                                     showingAddSheet = false
-                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
+                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, epics: [], dateDue: nil, dateCreated: .now)
                                 }
                                 .buttonStyle(.bordered)
                             }
@@ -189,7 +189,7 @@ struct DailyTasksSection: View {
                                 Button("Add") {
                                     tasksContainer.addTask(task: newTask)
                                     showingAddSheet = false
-                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, tags: [], dateDue: nil, dateCreated: .now)
+                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, epics: [], dateDue: nil, dateCreated: .now)
                                 }
                                 .buttonStyle(.bordered)
                             }

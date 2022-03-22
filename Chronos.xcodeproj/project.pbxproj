@@ -11,8 +11,8 @@
 		F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
 		F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4A27E12F6A006CEDF8 /* Category.swift */; };
 		F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4A27E12F6A006CEDF8 /* Category.swift */; };
-		F267EE4E27E13003006CEDF8 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4D27E13003006CEDF8 /* Tag.swift */; };
-		F267EE4F27E13003006CEDF8 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4D27E13003006CEDF8 /* Tag.swift */; };
+		F267EE4E27E13003006CEDF8 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4D27E13003006CEDF8 /* Epic.swift */; };
+		F267EE4F27E13003006CEDF8 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4D27E13003006CEDF8 /* Epic.swift */; };
 		F267EE5127E130B5006CEDF8 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5027E130B5006CEDF8 /* Status.swift */; };
 		F267EE5227E130B5006CEDF8 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5027E130B5006CEDF8 /* Status.swift */; };
 		F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		F267EE4727E12F2A006CEDF8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F267EE4A27E12F6A006CEDF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		F267EE4D27E13003006CEDF8 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		F267EE4D27E13003006CEDF8 /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
 		F267EE5027E130B5006CEDF8 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTasksView.swift; sourceTree = "<group>"; };
 		F285775C27E11B9A00A812F3 /* ChronosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronosApp.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				F299266E27E25DD300CE26ED /* TasksContainer.swift */,
 				F267EE4727E12F2A006CEDF8 /* Task.swift */,
 				F267EE4A27E12F6A006CEDF8 /* Category.swift */,
-				F267EE4D27E13003006CEDF8 /* Tag.swift */,
+				F267EE4D27E13003006CEDF8 /* Epic.swift */,
 				F267EE5027E130B5006CEDF8 /* Status.swift */,
 			);
 			path = Planning;
@@ -277,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F299266827E2089600CE26ED /* MockedData.swift in Sources */,
-				F267EE4E27E13003006CEDF8 /* Tag.swift in Sources */,
+				F267EE4E27E13003006CEDF8 /* Epic.swift in Sources */,
 				F299267927E54CE600CE26ED /* CategoryEditView.swift in Sources */,
 				F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */,
 				F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */,
@@ -301,7 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F299266927E2089600CE26ED /* MockedData.swift in Sources */,
-				F267EE4F27E13003006CEDF8 /* Tag.swift in Sources */,
+				F267EE4F27E13003006CEDF8 /* Epic.swift in Sources */,
 				F299267A27E54CE600CE26ED /* CategoryEditView.swift in Sources */,
 				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
 				F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */,
