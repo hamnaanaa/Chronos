@@ -53,22 +53,29 @@ struct TaskEditView: View {
     }
     
     var taskCategory: some View {
-        HStack {
-            Spacer()
-            VStack {
-                Text("Category")
-                    .font(.title2.bold())
-                
-                HStack {
-                    Image(systemName: task.category?.iconName ?? "questionmark.circle")
-                    // TODO: replace with selector button
-                    Text(task.category?.title ?? "No Category")
-                        .foregroundColor(task.category?.color)
-                }
-                .font(.title3)
+        Menu {
+            Picker(selection: $task.category, label: EmptyView()) {
+                Text("")
             }
-            Spacer()
+        } label: {
+            HStack {
+                Spacer()
+                VStack {
+                    Text("Category")
+                        .font(.title2.bold())
+                    
+                    HStack {
+                        Image(systemName: task.category.iconName)
+                        // TODO: replace with selector button
+                        Text(task.category.name)
+                            .foregroundColor(task.category.color)
+                    }
+                    .font(.title3)
+                }
+                Spacer()
+            }
         }
+        
     }
     
     var taskStatus: some View {
@@ -129,14 +136,14 @@ struct TaskEditView: View {
     
     // TODO: make it take the whole space!
     var taskDescription: some View {
-        TextEditor(text: $task.description ?? "")
+        TextEditor(text: $task.description)
             .frame(height: 250)
     }
 }
 
 struct TaskEditView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", description: nil, status: .inPrograss, category: MockedCategories.work, epics: [], dateDue: nil, dateCreated: .now)))
+        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", status: .inPrograss, category: .work, epics: [], description: "", dateDue: nil, dateCreated: .now)))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

@@ -11,20 +11,20 @@ struct Task: Identifiable, Codable {
     var id = UUID()
     
     var title: String
-    var description: String?
     var status: Status
-    var category: Category?
+    var category: Category
     var epics: [Epic]
+    var description: String
     var dateDue: Date?
     var dateCreated: Date
     
     
-    init(title: String, description: String?, status: Status, category: Category?, epics: [Epic], dateDue: Date? = nil, dateCreated: Date = .now) {
+    init(title: String, status: Status, category: Category, epics: [Epic], description: String = "", dateDue: Date? = nil, dateCreated: Date = .now) {
         self.title = title
-        self.description = description
         self.status = status
         self.category = category
         self.epics = epics
+        self.description = description
         self.dateDue = dateDue
         self.dateCreated = dateCreated
     }

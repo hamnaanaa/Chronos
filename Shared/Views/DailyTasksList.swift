@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-struct TextDivider: View {
-    let label: String
-    let horizontalPadding: CGFloat
-    let color: Color
-    
-    init(label: String, horizontalPadding: CGFloat = 20, color: Color = .gray) {
-        self.label = label
-        self.horizontalPadding = horizontalPadding
-        self.color = color
-    }
-    
-    var body: some View {
-        HStack {
-            line
-            Text(label).foregroundColor(color)
-            line
-        }
-    }
-    
-    var line: some View {
-        VStack { Divider().background(color) }.padding(horizontalPadding)
-    }
-}
-
 struct DailyTasksList: View {
     @EnvironmentObject var tasksContainer: TasksContainer
     
@@ -53,66 +29,12 @@ struct DailyTasksList: View {
             
             // categories section
             
-            ForEach(tasksContainer.categories.sorted(by: { $0.title < $1.title })) { category in
+            ForEach(Category.allCases, id: \.self) { category in
                 DailyTasksSection(category: category)
             }
             .padding([.leading, .trailing], 20)
             
-            // Add category button
-            
-            AddCategoryButton()
-            
-            
             Spacer()
-        }
-    }
-    
-    struct AddCategoryButton: View {
-        @EnvironmentObject var tasksContainer: TasksContainer
-        
-        /// A flag for displayed an edit sheet for a new category
-        @State private var showingAddSheet = false
-        /// A category to be edited if the `AddCategoryButton` is pressed
-        @State private var newCategory = Category(title: "", iconName: "circle.circle", color: .red)
-        
-        // TODO: add icon selection functionality here
-        var body: some View {
-            Button {
-                showingAddSheet.toggle()
-            } label: {
-                HStack {
-                    Spacer()
-                    Image(systemName: "plus")
-                    Text("New Category")
-                    Spacer()
-                }
-                .foregroundColor(.gray)
-            }
-            .sheet(isPresented: $showingAddSheet) {
-                NavigationView {
-                    CategoryEditView(category: $newCategory)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                // hide the sheet and reset the new task
-                                Button("Dismiss") {
-                                    showingAddSheet = false
-                                    newCategory = Category(title: "", iconName: "circle.circle", color: .red)
-                                }
-                                .buttonStyle(.bordered)
-                            }
-                            ToolbarItem(placement: .confirmationAction) {
-                                // TODO: add a check for existing category here
-                                Button("Add") {
-                                    tasksContainer.addCategory(category: newCategory)
-                                    showingAddSheet = false
-                                    newCategory = Category(title: "", iconName: "circle.circle", color: .red)
-                                }
-                                .buttonStyle(.bordered)
-                            }
-                        }
-                }
-            }
         }
     }
 }
@@ -137,8 +59,8 @@ struct DailyTasksSection: View {
                 AddTaskButton(category: category)
             }
         } label: {
-            Label(category.title, systemImage: category.iconName)
-                .font(.headline)
+            Label(category.name, systemImage: category.iconName)
+                .labelStyle(HeadlineLabelStyle())
         }
         .accentColor(category.color)
     }
@@ -154,13 +76,13 @@ struct DailyTasksSection: View {
         /// A flag for displayed an edit sheet for a new task
         @State private var showingAddSheet = false
         /// An empty task to be edited if the `AddTaskButton` is pressed
-        @State private var newTask = Task(title: "", description: nil, status: .notStarted, category: nil, epics: [], dateDue: nil, dateCreated: .now)
+        @State private var newTask = Task(title: "", status: .notStarted, category: .organisation, epics: [], description: "", dateDue: nil, dateCreated: .now)
         
         let category: Category
         
         var body: some View {
             Button {
-                newTask = Task(title: "", description: nil, status: .notStarted, category: category, epics: [], dateDue: nil, dateCreated: .now)
+                newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
                 showingAddSheet.toggle()
             } label: {
                 HStack {
@@ -181,7 +103,7 @@ struct DailyTasksSection: View {
                                 // hide the sheet and reset the new task
                                 Button("Dismiss") {
                                     showingAddSheet = false
-                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, epics: [], dateDue: nil, dateCreated: .now)
+                                    newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
                                 }
                                 .buttonStyle(.bordered)
                             }
@@ -189,7 +111,7 @@ struct DailyTasksSection: View {
                                 Button("Add") {
                                     tasksContainer.addTask(task: newTask)
                                     showingAddSheet = false
-                                    newTask = Task(title: "", description: nil, status: .notStarted, category: category, epics: [], dateDue: nil, dateCreated: .now)
+                                    newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
                                 }
                                 .buttonStyle(.bordered)
                             }
@@ -226,7 +148,7 @@ struct DailyTasksSection: View {
                     }
                 Spacer()
             }
-            .foregroundColor(task.category?.color)
+            .foregroundColor(task.category.color)
             .sheet(isPresented: $showingEditSheet) {
                 NavigationView {
                     TaskEditView(task: $task)

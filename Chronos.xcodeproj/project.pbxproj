@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F213019827EA219F005D151F /* EpicEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019727EA219F005D151F /* EpicEditView.swift */; };
 		F213019927EA219F005D151F /* EpicEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019727EA219F005D151F /* EpicEditView.swift */; };
+		F213019B27EA9673005D151F /* CustomLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019A27EA9673005D151F /* CustomLabelStyles.swift */; };
+		F213019C27EA9673005D151F /* CustomLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019A27EA9673005D151F /* CustomLabelStyles.swift */; };
 		F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
 		F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
 		F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4A27E12F6A006CEDF8 /* Category.swift */; };
@@ -29,8 +31,6 @@
 		F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285777B27E11CCE00A812F3 /* DailyTasksList.swift */; };
 		F299266527E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
 		F299266627E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
-		F299266827E2089600CE26ED /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266727E2089600CE26ED /* MockedData.swift */; };
-		F299266927E2089600CE26ED /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266727E2089600CE26ED /* MockedData.swift */; };
 		F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
 		F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
 		F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266E27E25DD300CE26ED /* TasksContainer.swift */; };
@@ -39,8 +39,6 @@
 		F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
 		F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
 		F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
-		F299267927E54CE600CE26ED /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267827E54CE600CE26ED /* CategoryEditView.swift */; };
-		F299267A27E54CE600CE26ED /* CategoryEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267827E54CE600CE26ED /* CategoryEditView.swift */; };
 		F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
@@ -49,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		F213019727EA219F005D151F /* EpicEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicEditView.swift; sourceTree = "<group>"; };
+		F213019A27EA9673005D151F /* CustomLabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelStyles.swift; sourceTree = "<group>"; };
 		F267EE4727E12F2A006CEDF8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F267EE4A27E12F6A006CEDF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F267EE4D27E13003006CEDF8 /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
@@ -62,12 +61,10 @@
 		F285776B27E11B9A00A812F3 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F285777B27E11CCE00A812F3 /* DailyTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
 		F299266427E203AB00CE26ED /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
-		F299266727E2089600CE26ED /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
 		F299266B27E25B2400CE26ED /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		F299266E27E25DD300CE26ED /* TasksContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksContainer.swift; sourceTree = "<group>"; };
 		F299267127E28A8C00CE26ED /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
-		F299267827E54CE600CE26ED /* CategoryEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditView.swift; sourceTree = "<group>"; };
 		F2F0825E27E7E1F60035D461 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				F299267127E28A8C00CE26ED /* TaskEditView.swift */,
-				F299267827E54CE600CE26ED /* CategoryEditView.swift */,
 				F213019727EA219F005D151F /* EpicEditView.swift */,
 			);
 			path = EditViews;
@@ -103,7 +99,6 @@
 		F267EE4427E12E68006CEDF8 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				F299266727E2089600CE26ED /* MockedData.swift */,
 				F299266327E2039900CE26ED /* Reflecting */,
 				F299266227E2037200CE26ED /* Planning */,
 			);
@@ -186,6 +181,7 @@
 				F299266B27E25B2400CE26ED /* Color+Codable.swift */,
 				F299267527E2957300CE26ED /* Binding+Optionals.swift */,
 				F2F0825E27E7E1F60035D461 /* AppColors.swift */,
+				F213019A27EA9673005D151F /* CustomLabelStyles.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -288,9 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F299266827E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4E27E13003006CEDF8 /* Epic.swift in Sources */,
-				F299267927E54CE600CE26ED /* CategoryEditView.swift in Sources */,
 				F213019827EA219F005D151F /* EpicEditView.swift in Sources */,
 				F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */,
 				F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */,
@@ -302,6 +296,7 @@
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776E27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777C27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
+				F213019B27EA9673005D151F /* CustomLabelStyles.swift in Sources */,
 				F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */,
 				F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */,
 				F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */,
@@ -313,9 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F299266927E2089600CE26ED /* MockedData.swift in Sources */,
 				F267EE4F27E13003006CEDF8 /* Epic.swift in Sources */,
-				F299267A27E54CE600CE26ED /* CategoryEditView.swift in Sources */,
 				F213019927EA219F005D151F /* EpicEditView.swift in Sources */,
 				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
 				F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */,
@@ -327,6 +320,7 @@
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
 				F285776F27E11B9A00A812F3 /* ContentView.swift in Sources */,
 				F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
+				F213019C27EA9673005D151F /* CustomLabelStyles.swift in Sources */,
 				F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */,
 				F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */,
 				F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */,

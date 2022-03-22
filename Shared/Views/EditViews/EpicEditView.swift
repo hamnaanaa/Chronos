@@ -37,6 +37,6 @@ struct EpicEditView: View {
 
 struct EpicEditView_Previews: PreviewProvider {
     static var previews: some View {
-        EpicEditView(epic: .constant(Epic(title: "WS2021", description: "Wintersemester 2021", color: .TextColor.purple, category: MockedCategories.education)))
+        EpicEditView(epic: .constant(Epic(title: "WS2021", description: "Wintersemester 2021", color: .TextColor.purple, category: .education)))
     }
 }

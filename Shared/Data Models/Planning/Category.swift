@@ -8,16 +8,44 @@
 import Foundation
 import SwiftUI
 
-struct Category: Identifiable, Hashable, Codable {
-    var id = UUID()
+enum Category: String, CaseIterable, Codable {
+    case education = "Education"
+    case work = "Work"
+    case projects = "Projects"
+    case organisation = "Organisation"
+    case freeTime = "Free Time"
     
-    var title: String
-    var iconName: String
-    var color: Color
+    var color: Color {
+        switch self {
+        case .education:
+            return .TextColor.purple
+        case .work:
+            return .TextColor.blue
+        case .projects:
+            return .TextColor.orange
+        case .organisation:
+            return .TextColor.yellow
+        case .freeTime:
+            return .TextColor.green
+        }
+    }
     
-    init(title: String, iconName: String, color: Color) {
-        self.title = title
-        self.iconName = iconName
-        self.color = color
+    var iconName: String {
+        switch self {
+        case .education:
+            return "graduationcap.fill"
+        case .work:
+            return "laptopcomputer"
+        case .projects:
+            return "gear.circle.fill"
+        case .organisation:
+            return "tray.fill"
+        case .freeTime:
+            return "person.circle.fill"
+        }
+    }
+    
+    var name: String {
+        rawValue
     }
 }

@@ -19,17 +19,17 @@ enum Status: String, CaseIterable, Codable {
     var color: Color {
         switch self {
         case .notStarted:
-            return .yellow
+            return .TextColor.yellow
         case .inPrograss:
-            return .green
+            return .TextColor.green
         case .done:
-            return .blue
+            return .TextColor.blue
         case .postponed:
-            return .purple
+            return .TextColor.purple
         case .missed:
-            return .red
+            return .TextColor.red
         case .cancelled:
-            return .gray
+            return .TextColor.gray
         }
     }
     

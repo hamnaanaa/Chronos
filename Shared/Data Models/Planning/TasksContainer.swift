@@ -11,11 +11,8 @@ import SwiftUI
 class TasksContainer: ObservableObject {
     @Published var tasks: [Task] = []
     
-    @Published var categories: Set<Category> = Set()
-    
     func reset(using data: ([Task], Set<Category>)? = nil) {
         self.tasks = data?.0 ?? []
-        self.categories = data?.1 ?? Set()
     }
     
     /// Save all tasks into persistent storage
@@ -24,7 +21,6 @@ class TasksContainer: ObservableObject {
     func saveAll(completion: ((Result<Int, Error>) -> Void)? = nil) {
         // TODO: Add improved filter logic here? E.g. no empty tasks
         TasksContainer.saveTasks(tasks: tasks, completion: completion ?? { _ in })
-        TasksContainer.saveCategories(categories: categories, completion: completion ?? { _ in })
     }
     
     func addTask(task: Task) {
@@ -33,18 +29,6 @@ class TasksContainer: ObservableObject {
     
     func removeTask(task: Task) {
         self.tasks.removeAll(where: { $0.id == task.id })
-    }
-    
-    func tasks(for filter: (Task) -> Bool) -> [Task] {
-        tasks.filter(filter)
-    }
-    
-    func tasks(for category: Category) -> [Task] {
-        tasks.filter { $0.category == category }
-    }
-    
-    func addCategory(category: Category) {
-        categories.update(with: category)
     }
 }
 
@@ -108,27 +92,6 @@ extension TasksContainer {
                 try data.write(to: outfile)
                 DispatchQueue.main.async {
                     completion(.success(tasks.count))
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
-                }
-            }
-        }
-    }
-    
-    /// Save selected categories into persistent storage
-    /// - Parameters:
-    ///   - categories: categories to be saved
-    ///   - completion: handler that accepts either the number of saved categories or an error
-    static func saveCategories(categories: Set<Category>, completion: @escaping (Result<Int, Error>) -> Void) {
-        DispatchQueue.global(qos: .background).async {
-            do {
-                let data = try JSONEncoder().encode(categories)
-                let outfile = try categoriesFileURL()
-                try data.write(to: outfile)
-                DispatchQueue.main.async {
-                    completion(.success(categories.count))
                 }
             } catch {
                 DispatchQueue.main.async {
