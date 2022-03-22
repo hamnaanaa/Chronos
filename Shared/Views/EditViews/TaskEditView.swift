@@ -55,7 +55,10 @@ struct TaskEditView: View {
     var taskCategory: some View {
         Menu {
             Picker(selection: $task.category, label: EmptyView()) {
-                Text("")
+                ForEach(Category.allCases, id: \.self) { categoryOption in
+                    Text(categoryOption.name)
+                        .tag(categoryOption)
+                }
             }
         } label: {
             HStack {
@@ -63,14 +66,14 @@ struct TaskEditView: View {
                 VStack {
                     Text("Category")
                         .font(.title2.bold())
+                        .foregroundColor(.primary)
                     
                     HStack {
                         Image(systemName: task.category.iconName)
-                        // TODO: replace with selector button
                         Text(task.category.name)
-                            .foregroundColor(task.category.color)
                     }
                     .font(.title3)
+                    .foregroundColor(task.category.color)
                 }
                 Spacer()
             }
