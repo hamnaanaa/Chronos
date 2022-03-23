@@ -35,7 +35,9 @@ struct TaskEditView: View {
                 .padding()
             }
             
-            // TODO: add tags horizontal grid for epics here
+            Section("Epics") {
+                taskEpics
+            }
             
             Section("Task Description") {
                 taskDescription
@@ -137,7 +139,24 @@ struct TaskEditView: View {
         }
     }
     
-    // TODO: make it take the whole space!
+    var taskEpics: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {
+                // TODO: "Add epic" button here. Reuse deleted add category button?
+                
+                ForEach(task.epics) { epic in
+                    Text(epic.title)
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 12)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(epic.color)
+                        )
+                }
+            }
+        }
+    }
+    
     var taskDescription: some View {
         TextEditor(text: $task.description)
             .frame(height: 250)
@@ -146,7 +165,17 @@ struct TaskEditView: View {
 
 struct TaskEditView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]", status: .inPrograss, category: .work, epics: [], description: "", dateDue: nil, dateCreated: .now)))
+        TaskEditView(task: .constant(Task(title: "QM -> Daily [07.03.22]",
+                                          status: .inPrograss,
+                                          category: .work,
+                                          epics: [
+                                            Epic(title: "WS2122", description: "", color: .BackgroundColor.purple, category: .education),
+                                            Epic(title: "TUM", description: "", color: .BackgroundColor.purple, category: .education)
+                                          ],
+                                          description: "",
+                                          dateDue: nil,
+                                          dateCreated: .now)
+                                    ))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
