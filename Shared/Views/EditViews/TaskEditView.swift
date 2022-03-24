@@ -208,6 +208,7 @@ struct TaskEditView: View {
                             }
                             ToolbarItem(placement: .confirmationAction) {
                                 Button("Add") {
+                                    // TODO: check for valid data before adding
                                     tasksContainer.addEpic(epic: newEpic)
                                     task.epics.append(newEpic)
                                     showingAddSheet = false

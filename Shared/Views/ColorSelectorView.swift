@@ -22,6 +22,12 @@ struct ColorSelectorView: View {
                     color
                         .aspectRatio(1, contentMode: .fit)
                         .cornerRadius(8)
+                        .overlay {
+                            if color == selectedColor {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.red, lineWidth: 4)
+                            }
+                        }
                 }
                 .buttonStyle(.borderless)
             }
