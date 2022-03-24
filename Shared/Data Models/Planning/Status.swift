@@ -16,7 +16,7 @@ enum Status: String, CaseIterable, Codable {
     case missed = "missed"
     case cancelled = "cancelled"
     
-    var color: Color {
+    var textColor: Color {
         switch self {
         case .notStarted:
             return .TextColor.yellow
@@ -30,6 +30,23 @@ enum Status: String, CaseIterable, Codable {
             return .TextColor.red
         case .cancelled:
             return .TextColor.gray
+        }
+    }
+    
+    var backgroundColor: Color {
+        switch self {
+        case .notStarted:
+            return .BackgroundColor.yellow
+        case .inPrograss:
+            return .BackgroundColor.green
+        case .done:
+            return .BackgroundColor.blue
+        case .postponed:
+            return .BackgroundColor.purple
+        case .missed:
+            return .BackgroundColor.red
+        case .cancelled:
+            return .BackgroundColor.gray
         }
     }
     

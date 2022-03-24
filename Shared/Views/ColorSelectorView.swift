@@ -12,10 +12,11 @@ struct ColorSelectorView: View {
     
     @Binding var selectedColor: Color
     
+    let isBackground: Bool
+    
     var body: some View {
         LazyVGrid(columns: colorColumns) {
-            // TODO: better logic for selecting Text vs. Background color
-            ForEach(Color.TextColor.allColors, id: \.self) { color in
+            ForEach(allColors, id: \.self) { color in
                 Button {
                     selectedColor = color
                 } label: {
@@ -34,11 +35,19 @@ struct ColorSelectorView: View {
         }
         .padding(.vertical)
     }
+    
+    var allColors: [Color] {
+        if isBackground {
+            return Color.BackgroundColor.allColors
+        } else {
+            return Color.TextColor.allColors
+        }
+    }
 }
 
 struct ColorSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorSelectorView(selectedColor: .constant(Color.TextColor.primary))
+        ColorSelectorView(selectedColor: .constant(Color.TextColor.primary), isBackground: false)
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

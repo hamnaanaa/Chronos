@@ -20,7 +20,7 @@ struct EpicEditView: View {
             }
             
             Section("Color") {
-                ColorSelectorView(selectedColor: $epic.color)
+                ColorSelectorView(selectedColor: $epic.color, isBackground: true)
             }
         }
     }

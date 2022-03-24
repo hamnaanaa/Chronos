@@ -63,7 +63,7 @@ struct DailyTasksSection: View {
             Label(category.name, systemImage: category.iconName)
                 .labelStyle(HeadlineLabelStyle())
         }
-        .accentColor(category.color)
+        .accentColor(category.textColor)
     }
     
     /// Helper function to test if the given task belongs to this `DailyTasksSection`
@@ -92,7 +92,7 @@ struct DailyTasksSection: View {
                     Text("New Task")
                     Spacer()
                 }
-                .foregroundColor(category.color)
+                .foregroundColor(category.textColor)
             }
             .sheet(isPresented: $showingAddSheet) {
                 NavigationView {
@@ -149,7 +149,7 @@ struct DailyTasksSection: View {
                     }
                 Spacer()
             }
-            .foregroundColor(task.category.color)
+            .foregroundColor(task.category.textColor)
             .sheet(isPresented: $showingEditSheet) {
                 NavigationView {
                     TaskEditView(task: $task)

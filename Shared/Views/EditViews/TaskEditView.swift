@@ -76,7 +76,7 @@ struct TaskEditView: View {
                         Text(task.category.name)
                     }
                     .font(.title3)
-                    .foregroundColor(task.category.color)
+                    .foregroundColor(task.category.textColor)
                 }
                 Spacer()
             }
@@ -101,7 +101,7 @@ struct TaskEditView: View {
                         .foregroundColor(.TextColor.primary)
                     Text(task.status.name)
                         .font(.title3)
-                        .foregroundColor(task.status.color)
+                        .foregroundColor(task.status.textColor)
                 }
                 Spacer()
             }

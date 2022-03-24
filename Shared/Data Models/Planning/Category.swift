@@ -15,7 +15,7 @@ enum Category: String, CaseIterable, Codable {
     case organisation = "Organisation"
     case freeTime = "Free Time"
     
-    var color: Color {
+    var textColor: Color {
         switch self {
         case .education:
             return .TextColor.purple
@@ -27,6 +27,21 @@ enum Category: String, CaseIterable, Codable {
             return .TextColor.yellow
         case .freeTime:
             return .TextColor.green
+        }
+    }
+    
+    var backgroundColor: Color {
+        switch self {
+        case .education:
+            return .BackgroundColor.purple
+        case .work:
+            return .BackgroundColor.blue
+        case .projects:
+            return .BackgroundColor.orange
+        case .organisation:
+            return .BackgroundColor.yellow
+        case .freeTime:
+            return .BackgroundColor.green
         }
     }
     
