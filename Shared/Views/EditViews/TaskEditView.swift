@@ -194,7 +194,6 @@ struct TaskEditView: View {
             .sheet(isPresented: $showingAddSheet) {
                 NavigationView {
                     EpicEditView(epic: $newEpic)
-                        .navigationBarTitleDisplayMode(.inline)
                         .toolbar {
                             ToolbarItem(placement: .cancellationAction) {
                                 // hide the sheet and reset the new task
@@ -214,6 +213,8 @@ struct TaskEditView: View {
                                 .buttonStyle(.bordered)
                             }
                         }
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationViewStyle(.stack)
                 }
             }
         }
