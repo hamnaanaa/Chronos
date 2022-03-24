@@ -14,6 +14,7 @@ struct ColorSelectorView: View {
     
     var body: some View {
         LazyVGrid(columns: colorColumns) {
+            // TODO: better logic for selecting Text vs. Background color
             ForEach(Color.TextColor.allColors, id: \.self) { color in
                 Button {
                     selectedColor = color

@@ -73,9 +73,9 @@ struct DailyTasksSection: View {
     struct AddTaskButton: View {
         @EnvironmentObject var tasksContainer: TasksContainer
         
-        /// A flag for displayed an edit sheet for a new task
+        /// A flag for displayed an edit sheet for a new `Task`
         @State private var showingAddSheet = false
-        /// An empty task to be edited if the `AddTaskButton` is pressed
+        /// An empty `Epic` to be edited if the `AddTaskButton` is pressed
         @State private var newTask = Task(title: "", status: .notStarted, category: .organisation, epics: [], description: "", dateDue: nil, dateCreated: .now)
         
         let category: Category
@@ -95,28 +95,26 @@ struct DailyTasksSection: View {
                 .foregroundColor(category.color)
             }
             .sheet(isPresented: $showingAddSheet) {
-                NavigationView {
-                    TaskEditView(task: $newTask)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                // hide the sheet and reset the new task
-                                Button("Dismiss") {
-                                    showingAddSheet = false
-                                    newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
-                                }
-                                .buttonStyle(.bordered)
+                TaskEditView(task: $newTask)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            // hide the sheet and reset the new task
+                            Button("Dismiss", role: .cancel) {
+                                showingAddSheet = false
+                                newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
                             }
-                            ToolbarItem(placement: .confirmationAction) {
-                                Button("Add") {
-                                    tasksContainer.addTask(task: newTask)
-                                    showingAddSheet = false
-                                    newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
-                                }
-                                .buttonStyle(.bordered)
-                            }
+                            .buttonStyle(.bordered)
                         }
-                }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Add") {
+                                tasksContainer.addTask(task: newTask)
+                                showingAddSheet = false
+                                newTask = Task(title: "", status: .notStarted, category: category, epics: [], description: "", dateDue: nil, dateCreated: .now)
+                            }
+                            .buttonStyle(.bordered)
+                        }
+                    }
             }
         }
     }
@@ -150,20 +148,17 @@ struct DailyTasksSection: View {
             }
             .foregroundColor(task.category.color)
             .sheet(isPresented: $showingEditSheet) {
-                NavigationView {
-                    TaskEditView(task: $task)
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                // hide the sheet and reset the new task
-                                Button("Delete", role: .destructive) {
-                                    showingEditSheet = false
-                                    tasksContainer.removeTask(task: task)
-                                }
-                                .buttonStyle(.bordered)
+                TaskEditView(task: $task)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            // hide the sheet and reset the new task
+                            Button("Delete", role: .destructive) {
+                                showingEditSheet = false
+                                tasksContainer.removeTask(task: task)
                             }
+                            .buttonStyle(.bordered)
                         }
-                        .navigationBarTitleDisplayMode(.inline)
-                }
+                    }
             }
         }
     }

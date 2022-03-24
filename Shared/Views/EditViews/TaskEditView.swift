@@ -37,6 +37,7 @@ struct TaskEditView: View {
             
             Section("Epics") {
                 taskEpics
+                    .padding(.vertical, 4)
             }
             
             Section("Task Description") {
@@ -142,8 +143,10 @@ struct TaskEditView: View {
     var taskEpics: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {
-                // TODO: "Add epic" button here. Reuse deleted add category button?
+                // new epic button
+                AddEpicButton(task: $task)
                 
+                // all other epics
                 ForEach(task.epics) { epic in
                     Text(epic.title)
                         .padding(.vertical, 4)
@@ -160,6 +163,60 @@ struct TaskEditView: View {
     var taskDescription: some View {
         TextEditor(text: $task.description)
             .frame(height: 250)
+    }
+    
+    struct AddEpicButton: View {
+        @EnvironmentObject var tasksContainer: TasksContainer
+        
+        /// A flag for displayed an edit sheet for a new `Epic`
+        @State private var showingAddSheet = false
+        /// An empty `Epic` to be edited if the `AddEpicButton` is pressed
+        @State private var newEpic = Epic(title: "", description: "", color: .BackgroundColor.primary, category: .education)
+        
+        @Binding var task: Task
+        
+        var body: some View {
+            Button {
+                newEpic = Epic(title: "", description: "", color: .BackgroundColor.primary, category: task.category)
+                showingAddSheet.toggle()
+            } label: {
+                HStack {
+                    Image(systemName: "plus")
+                    Text("New Epic")
+                }
+                .padding(.vertical, 4)
+                .padding(.horizontal, 12)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(newEpic.color)
+                )
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                NavigationView {
+                    EpicEditView(epic: $newEpic)
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                // hide the sheet and reset the new task
+                                Button("Dismiss", role: .cancel) {
+                                    showingAddSheet = false
+                                    newEpic = Epic(title: "", description: "", color: .BackgroundColor.primary, category: task.category)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Add") {
+                                    tasksContainer.addEpic(epic: newEpic)
+                                    task.epics.append(newEpic)
+                                    showingAddSheet = false
+                                    newEpic = Epic(title: "", description: "", color: .BackgroundColor.primary, category: task.category)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                }
+            }
+        }
     }
 }
 
