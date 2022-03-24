@@ -147,14 +147,17 @@ struct TaskEditView: View {
                 AddEpicButton(task: $task)
                 
                 // all other epics
-                ForEach(task.epics) { epic in
-                    Text(epic.title)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 12)
-                        .background(
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(epic.color)
-                        )
+                ForEach($task.epics) { $epic in
+                    NavigationLink(destination: EpicEditView(epic: $epic)) {
+                        Text(epic.title)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal)
+                            .foregroundColor(.TextColor.primary)
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(epic.color)
+                            )
+                    }
                 }
             }
         }
