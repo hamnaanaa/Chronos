@@ -69,7 +69,7 @@ struct TaskEditView: View {
                 VStack {
                     Text("Category")
                         .font(.title2.bold())
-                        .foregroundColor(.primary)
+                        .foregroundColor(.TextColor.primary)
                     
                     HStack {
                         Image(systemName: task.category.iconName)
@@ -98,7 +98,7 @@ struct TaskEditView: View {
                 VStack {
                     Text("Status")
                         .font(.title2.bold())
-                        .foregroundColor(.primary)
+                        .foregroundColor(.TextColor.primary)
                     Text(task.status.name)
                         .font(.title3)
                         .foregroundColor(task.status.color)
@@ -114,6 +114,7 @@ struct TaskEditView: View {
             VStack {
                 Text("Due")
                     .font(.title2.bold())
+                    .foregroundColor(.TextColor.primary)
                     .padding(.bottom, -2)
                 
                 DatePicker("label", selection: $task.dateDue ?? .now, displayedComponents: .date)
@@ -130,6 +131,7 @@ struct TaskEditView: View {
             VStack {
                 Text("Created")
                     .font(.title2.bold())
+                    .foregroundColor(.TextColor.primary)
                     .padding(.bottom, -2)
                 
                 DatePicker("label", selection: $task.dateCreated, displayedComponents: .date)
@@ -189,6 +191,7 @@ struct TaskEditView: View {
                 }
                 .padding(.vertical, 4)
                 .padding(.horizontal, 12)
+                .foregroundColor(.TextColor.primary)
                 .background(
                     RoundedRectangle(cornerRadius: 8)
                         .fill(newEpic.color)

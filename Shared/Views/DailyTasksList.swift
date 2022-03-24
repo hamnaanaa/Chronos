@@ -21,6 +21,7 @@ struct DailyTasksList: View {
                 Spacer()
                 Text(day)
                     .font(.title.bold())
+                    .foregroundColor(.TextColor.primary)
                 Spacer()
             }
             .padding(.bottom, 10)
@@ -89,7 +90,6 @@ struct DailyTasksSection: View {
                     Spacer()
                     Image(systemName: "plus")
                     Text("New Task")
-                    Spacer()
                     Spacer()
                 }
                 .foregroundColor(category.color)
