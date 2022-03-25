@@ -18,6 +18,15 @@ struct Task: Identifiable, Codable {
     var dateDue: Date?
     var dateCreated: Date
     
+    /// A computed property indicating whether this `Task` is completed
+    var isCompleted: Bool {
+        switch status {
+        case .notStarted, .inPrograss, .postponed:
+            return false
+        case .done, .missed, .cancelled:
+            return true
+        }
+    }
     
     init(title: String, status: Status, category: Category, epics: [Epic], description: String = "", dateDue: Date? = nil, dateCreated: Date = .now) {
         self.title = title
