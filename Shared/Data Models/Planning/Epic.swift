@@ -23,4 +23,6 @@ struct Epic: Identifiable, Codable {
         self.color = color
         self.category = category
     }
+    
+    static var exampleEpic = Epic(title: "WS2122", description: "", color: .BackgroundColor.purple, category: .education)
 }

@@ -37,4 +37,6 @@ struct Task: Identifiable, Codable {
         self.dateDue = dateDue
         self.dateCreated = dateCreated
     }
+    
+    static var exampleTask = Task(title: "Submit final thesis paper", status: .inPrograss, category: .education, epics: [Epic.exampleEpic])
 }
