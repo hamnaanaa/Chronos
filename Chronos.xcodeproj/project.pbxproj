@@ -43,6 +43,8 @@
 		F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
 		F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
+		F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */; };
+		F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
 		F2F0825E27E7E1F60035D461 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
+		F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksOverview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				F213019627EA2190005D151F /* EditViews */,
-				F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */,
-				F285777B27E11CCE00A812F3 /* DailyTasksList.swift */,
-				F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */,
+				F2F7C0F527EE70FA00CB05F2 /* Overview */,
+				F2F7C0F427EE70EB00CB05F2 /* Weekly */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +186,24 @@
 				F213019A27EA9673005D151F /* CustomLabelStyles.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F2F7C0F427EE70EB00CB05F2 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */,
+				F285777B27E11CCE00A812F3 /* DailyTasksList.swift */,
+				F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		F2F7C0F527EE70FA00CB05F2 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */,
+			);
+			path = Overview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +311,7 @@
 				F299267227E28A8C00CE26ED /* TaskEditView.swift in Sources */,
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */,
+				F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */,
 				F267EE5127E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
@@ -315,6 +336,7 @@
 				F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */,
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */,
+				F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */,
 				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
