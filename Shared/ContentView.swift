@@ -11,7 +11,12 @@ struct ContentView: View {
     @EnvironmentObject var tasksContainer: TasksContainer
     
     var body: some View {
-        WeeklyTasksView()
+        TabView {
+            WeeklyTasksView()
+                .tabItem {
+                    Label("Weekly", systemImage: "newspaper")
+                }
+        }
     }
 }
 
