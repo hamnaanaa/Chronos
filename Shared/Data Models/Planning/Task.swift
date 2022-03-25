@@ -38,5 +38,12 @@ struct Task: Identifiable, Codable {
         self.dateCreated = dateCreated
     }
     
-    static var exampleTask = Task(title: "Submit final thesis paper", status: .inPrograss, category: .education, epics: [Epic.exampleEpic])
+    /// A total number of displayable properties of a `Task`, like its status, title, ...
+    static var numOfProps: Int {
+        7
+    }
+    
+    static var exampleTask1 = Task(title: "Submit final thesis paper", status: .inPrograss, category: .education, epics: [Epic.exampleEpic1])
+    static var exampleTask2 = Task(title: "Learn more about SwiftUI", status: .done, category: .projects, epics: [Epic.exampleEpic2])
+    static var exampleTask3 = Task(title: "Free Swimming", status: .cancelled, category: .freeTime, epics: [Epic.exampleEpic3, .exampleEpic4])
 }

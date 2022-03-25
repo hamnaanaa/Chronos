@@ -10,39 +10,29 @@ import SwiftUI
 struct TasksOverview: View {
     @EnvironmentObject var tasksContainer: TasksContainer
     
+    let columns = Array(repeating: GridItem(.flexible()), count: Task.numOfProps)
+    
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem()]) {
-                header
-                
+            LazyVGrid(columns: columns) {
                 ForEach(tasksContainer.tasks) { task in
-                    HStack {
-                        Text(task.status.name)
-                            .frame(width: 150)
-                        Text(task.title)
-                        
-                        Spacer()
-                    }
+                    Text(task.category.name)
+                    Text(String(describing: task.status))
+                    Text("List of epics")
+                    Text(String(describing: task.title))
+                    Text(task.description)
+                    Text(String(describing: task.dateDue))
+                    Text(String(describing: task.dateCreated))
                 }
             }
         }
-    }
-    
-    var header: some View {
-        HStack {
-            Text("Status")
-                .frame(width: 150)
-            Text("Task")
-            Spacer()
-        }
-        .font(.headline.bold())
     }
 }
 
 struct TasksOverview_Previews: PreviewProvider {
     static var previews: some View {
         let tasksContainer = TasksContainer()
-        tasksContainer.reset(using: (Array(repeating: Task.exampleTask, count: 20), [Epic.exampleEpic]))
+        tasksContainer.reset(using: ([Task.exampleTask1, .exampleTask2, .exampleTask3], []))
         return TasksOverview()
             .environmentObject(tasksContainer)
             .previewInterfaceOrientation(.landscapeLeft)

@@ -24,5 +24,8 @@ struct Epic: Identifiable, Codable {
         self.category = category
     }
     
-    static var exampleEpic = Epic(title: "WS2122", description: "", color: .BackgroundColor.purple, category: .education)
+    static var exampleEpic1 = Epic(title: "WS2122", description: "Wintersemester 2021", color: .BackgroundColor.purple, category: .education)
+    static var exampleEpic2 = Epic(title: "Programming", description: "Everything coding-related", color: .BackgroundColor.orange, category: .projects)
+    static var exampleEpic3 = Epic(title: "Swimming", description: "", color: .BackgroundColor.green, category: .freeTime)
+    static var exampleEpic4 = Epic(title: "Sport", description: "", color: .BackgroundColor.green, category: .freeTime)
 }
