@@ -129,13 +129,12 @@ struct DailyTasksSection: View {
         @Binding var task: Task
         
         // TODO: if isDone -> ~text~ strikethrough and other background color?
-        // TODO: replace checking == .done with task.isDone computed property
         var body: some View {
             HStack {
                 Button {
                     onDoneButtonPressed()
                 } label: {
-                    Image(systemName: task.status == .done ? "checkmark.square" : "square")
+                    Image(systemName: task.isCompleted ? "checkmark.square" : "square")
                 }
                 
                 TextField("", text: $task.title)
@@ -145,7 +144,7 @@ struct DailyTasksSection: View {
                 Spacer()
             }
             .foregroundColor(task.category.textColor)
-            .background(task.status == .done
+            .background(task.isCompleted
                         ? RoundedRectangle(cornerRadius: 8)
                             .fill(task.category.backgroundColor)
                         : nil
