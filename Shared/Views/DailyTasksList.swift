@@ -55,7 +55,6 @@ struct DailyTasksSection: View {
                         DailyTasksEntry(task: $task)
                     }
                 }
-                .padding(.vertical, 4)
                 
                 AddTaskButton(category: category)
             }
@@ -125,22 +124,18 @@ struct DailyTasksSection: View {
     struct DailyTasksEntry: View {
         @EnvironmentObject var tasksContainer: TasksContainer
         
-        // TODO: add more complex checkmark logic here with more squares
-        // e.g. long press for failed
-        @State private var isDone = false
-        
         @State private var showingEditSheet = false
         
         @Binding var task: Task
         
-        // TODO: if isDone -> ~text~ and other background color?
+        // TODO: if isDone -> ~text~ strikethrough and other background color?
+        // TODO: replace checking == .done with task.isDone computed property
         var body: some View {
             HStack {
                 Button {
-                    // TODO: use task binding with improved logic
-                    isDone.toggle()
+                    onDoneButtonPressed()
                 } label: {
-                    Image(systemName: isDone ? "checkmark.square" : "square")
+                    Image(systemName: task.status == .done ? "checkmark.square" : "square")
                 }
                 
                 TextField("", text: $task.title)
@@ -150,6 +145,11 @@ struct DailyTasksSection: View {
                 Spacer()
             }
             .foregroundColor(task.category.textColor)
+            .background(task.status == .done
+                        ? RoundedRectangle(cornerRadius: 8)
+                            .fill(task.category.backgroundColor)
+                        : nil
+            )
             .sheet(isPresented: $showingEditSheet) {
                 NavigationView {
                     TaskEditView(task: $task)
@@ -173,6 +173,16 @@ struct DailyTasksSection: View {
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationViewStyle(.stack)
                 }
+            }
+        }
+        
+        // TODO: More sophisticated logic for "check" button pressed?
+        private func onDoneButtonPressed() {
+            switch task.status {
+            case .done:
+                task.status = .inPrograss
+            default:
+                task.status = .done
             }
         }
     }
