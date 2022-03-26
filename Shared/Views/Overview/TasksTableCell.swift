@@ -30,6 +30,7 @@ struct TasksTableCell: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
+        .hoverEffect()
     }
     
     private var categorySection: some View {
