@@ -15,8 +15,8 @@ struct TasksTableCell: View {
         GridItem(.fixed(150), alignment: .topLeading),
         GridItem(.flexible(), alignment: .topLeading),
         GridItem(.fixed(300), alignment: .topLeading),
-        GridItem(.fixed(150), alignment: .topLeading),
-        GridItem(.fixed(150), alignment: .topLeading)
+        GridItem(.fixed(130), alignment: .topLeading),
+        GridItem(.fixed(130), alignment: .topLeading)
     ]
     
     var body: some View {
