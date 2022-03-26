@@ -142,6 +142,7 @@ struct TaskEditView: View {
         }
     }
     
+    // TODO: add epic removal button from this list
     var taskEpics: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {

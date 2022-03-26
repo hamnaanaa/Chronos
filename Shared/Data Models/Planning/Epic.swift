@@ -23,9 +23,14 @@ struct Epic: Identifiable, Codable {
         self.color = color
         self.category = category
     }
-    
+}
+
+
+/// Mocked data
+extension Epic {
     static var exampleEpic1 = Epic(title: "WS2122", description: "Wintersemester 2021", color: .BackgroundColor.purple, category: .education)
     static var exampleEpic2 = Epic(title: "Programming", description: "Everything coding-related", color: .BackgroundColor.orange, category: .projects)
     static var exampleEpic3 = Epic(title: "Swimming", description: "", color: .BackgroundColor.green, category: .freeTime)
     static var exampleEpic4 = Epic(title: "Sport", description: "", color: .BackgroundColor.green, category: .freeTime)
+
 }

@@ -14,15 +14,9 @@ struct TasksOverview: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(tasksContainer.tasks) { task in
-                    Text(task.category.name)
-                    Text(String(describing: task.status))
-                    Text("List of epics")
-                    Text(String(describing: task.title))
-                    Text(task.description)
-                    Text(String(describing: task.dateDue))
-                    Text(String(describing: task.dateCreated))
+            LazyVStack(alignment: .leading) {
+                ForEach($tasksContainer.tasks) { $task in
+                    TasksTableCell(task: $task)
                 }
             }
         }
@@ -32,7 +26,7 @@ struct TasksOverview: View {
 struct TasksOverview_Previews: PreviewProvider {
     static var previews: some View {
         let tasksContainer = TasksContainer()
-        tasksContainer.reset(using: ([Task.exampleTask1, .exampleTask2, .exampleTask3], []))
+        tasksContainer.reset(using: (TasksContainer.mockedTasks, TasksContainer.mockedEpics))
         return TasksOverview()
             .environmentObject(tasksContainer)
             .previewInterfaceOrientation(.landscapeLeft)

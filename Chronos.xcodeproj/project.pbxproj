@@ -45,6 +45,10 @@
 		F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
 		F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */; };
 		F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */; };
+		F2F7C0FA27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */; };
+		F2F7C0FB27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */; };
+		F2F7C0FD27EE804100CB05F2 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0FC27EE804100CB05F2 /* TasksTableHeader.swift */; };
+		F2F7C0FE27EE804100CB05F2 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0FC27EE804100CB05F2 /* TasksTableHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +74,8 @@
 		F2F0825E27E7E1F60035D461 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
 		F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksOverview.swift; sourceTree = "<group>"; };
+		F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableCell.swift; sourceTree = "<group>"; };
+		F2F7C0FC27EE804100CB05F2 /* TasksTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */,
+				F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */,
+				F2F7C0FC27EE804100CB05F2 /* TasksTableHeader.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -312,6 +320,7 @@
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */,
+				F2F7C0FD27EE804100CB05F2 /* TasksTableHeader.swift in Sources */,
 				F267EE5127E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
@@ -322,6 +331,7 @@
 				F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */,
 				F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776C27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
+				F2F7C0FA27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +347,7 @@
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */,
+				F2F7C0FE27EE804100CB05F2 /* TasksTableHeader.swift in Sources */,
 				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
@@ -347,6 +358,7 @@
 				F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */,
 				F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776D27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
+				F2F7C0FB27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

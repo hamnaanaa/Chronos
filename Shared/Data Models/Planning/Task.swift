@@ -42,8 +42,12 @@ struct Task: Identifiable, Codable {
     static var numOfProps: Int {
         7
     }
-    
-    static var exampleTask1 = Task(title: "Submit final thesis paper", status: .inPrograss, category: .education, epics: [Epic.exampleEpic1])
+}
+
+
+/// Mocked data
+extension Task {
+    static var exampleTask1 = Task(title: "Submit final thesis paper regarding the story of my long textual life", status: .inPrograss, category: .education, epics: [Epic.exampleEpic1])
     static var exampleTask2 = Task(title: "Learn more about SwiftUI", status: .done, category: .projects, epics: [Epic.exampleEpic2])
     static var exampleTask3 = Task(title: "Free Swimming", status: .cancelled, category: .freeTime, epics: [Epic.exampleEpic3, .exampleEpic4])
 }

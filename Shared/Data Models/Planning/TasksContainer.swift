@@ -134,3 +134,10 @@ extension TasksContainer {
         }
     }
 }
+
+
+/// Mocked data
+extension TasksContainer {
+    static var mockedTasks = [Task.exampleTask1, .exampleTask2, .exampleTask3]
+    static var mockedEpics = [Epic.exampleEpic1, .exampleEpic2, .exampleEpic3, .exampleEpic4]
+}
