@@ -47,7 +47,39 @@ struct Task: Identifiable, Codable {
 
 /// Mocked data
 extension Task {
-    static var exampleTask1 = Task(title: "Submit final thesis paper regarding the story of my long textual life", status: .inPrograss, category: .education, epics: [Epic.exampleEpic1])
-    static var exampleTask2 = Task(title: "Learn more about SwiftUI", status: .done, category: .projects, epics: [Epic.exampleEpic2])
-    static var exampleTask3 = Task(title: "Free Swimming", status: .cancelled, category: .freeTime, epics: [Epic.exampleEpic3, .exampleEpic4])
+    static var exampleTask1 = Task(
+        title: "Submit final thesis paper",
+        status: .inPrograss,
+        category: .education,
+        epics: [Epic.exampleEpic1],
+        dateDue: .now.addingTimeInterval(.random(in: 0...10_000_000)),
+        dateCreated: .now.addingTimeInterval(.random(in: 0...10_000_000))
+    )
+    
+    static var exampleTask2 = Task(
+        title: "Learn more about SwiftUI",
+        status: .done,
+        category: .projects,
+        epics: [Epic.exampleEpic2],
+        dateDue: .now.addingTimeInterval(.random(in: 0...10_000_000)),
+        dateCreated: .now.addingTimeInterval(.random(in: 0...10_000_000))
+    )
+    
+    static var exampleTask3 = Task(
+        title: "Free Swimming",
+        status: .cancelled,
+        category: .freeTime,
+        epics: [Epic.exampleEpic3, .exampleEpic4],
+        dateDue: .now.addingTimeInterval(.random(in: 0...10_000_000)),
+        dateCreated: .now.addingTimeInterval(.random(in: 0...10_000_000))
+    )
+    
+    static var exampleTaskLongestText = Task(
+        title: "Submit final thesis paper regarding the story of my long textual life and then I'll tell you what to do next",
+        status: .inPrograss,
+        category: .organisation,
+        epics: [.exampleEpic1, .exampleEpic2, .exampleEpic3, .exampleEpic4],
+        dateDue: ISO8601DateFormatter().date(from: "2022-09-30T10:44:00+0000")!,
+        dateCreated: ISO8601DateFormatter().date(from: "2022-09-30T10:44:00+0000")!
+    )
 }

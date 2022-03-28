@@ -10,26 +10,42 @@ import SwiftUI
 struct TasksTableCell: View {
     @Binding var task: Task
     
-    private let columnsAlignment = [
-        GridItem(.fixed(150), alignment: .topLeading),
-        GridItem(.fixed(150), alignment: .topLeading),
-        GridItem(.flexible(), alignment: .topLeading),
-        GridItem(.fixed(300), alignment: .topLeading),
-        GridItem(.fixed(130), alignment: .topLeading),
-        GridItem(.fixed(130), alignment: .topLeading)
-    ]
-    
     var body: some View {
-        LazyVGrid(columns: columnsAlignment) {
-            categorySection
-            statusSection
-            titleSection
-            epicsSection
-            dateDueSection
-            dateCreatedSection
+        HStack {
+            Group {
+                Divider().background(Color.TextColor.primary)
+                categorySection
+                    .frame(width: 100)
+            }
+            Group {
+                Divider().background(Color.TextColor.primary)
+                statusSection
+                    .frame(width: 100)
+            }
+            Group {
+                Divider().background(Color.TextColor.primary)
+                titleSection
+                    .frame(width: 290, alignment: .topLeading)
+                    .multilineTextAlignment(.leading)
+            }
+            Group {
+                Divider().background(Color.TextColor.primary)
+                epicsSection
+                    .frame(width: 300, alignment: .leading)
+            }
+            Group {
+                Divider().background(Color.TextColor.primary)
+                dateDueSection
+                    .frame(width: 140)
+            }
+            Group {
+                Divider().background(Color.TextColor.primary)
+                dateCreatedSection
+                    .frame(width: 140)
+                Divider().background(Color.TextColor.primary)
+            }
         }
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal)
+        .frame(height: 45, alignment: .center)
         .hoverEffect()
     }
     
@@ -73,20 +89,21 @@ struct TasksTableCell: View {
     
     private var dateDueSection: some View {
         if let dateDue = task.dateDue {
-            return Text(dateDue, style: .date)
+            return Text(dateDue, format: .dateTime.year().month().day())
         } else {
             return Text("")
         }
     }
     
     private var dateCreatedSection: some View {
-        Text(task.dateCreated, style: .date)
+        Text(task.dateCreated,
+             format: .dateTime.year().month().day())
     }
 }
 
 struct TasksTableCell_Previews: PreviewProvider {
     static var previews: some View {
-        TasksTableCell(task: .constant(Task.exampleTask1))
+        TasksTableCell(task: .constant(Task.exampleTaskLongestText))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

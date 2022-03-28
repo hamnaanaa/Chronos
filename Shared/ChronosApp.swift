@@ -16,18 +16,20 @@ struct ChronosApp: App {
             ContentView()
                 .environmentObject(tasksContainer)
                 .onAppear {
-                    TasksContainer.load { result in
-                        switch result {
-                        case .failure(let error):
-                            print("[ERROR] Could not load data from persistent storage. Reason: \(String(describing: error))")
-                            // couldn't load data from persistent storage -> initialize empty list
-                            tasksContainer.reset(using: nil)
-                            // too aggresive
-                            // fatalError(String(describing: error))
-                        case .success(let data):
-                            tasksContainer.reset(using: data)
-                        }
-                    }
+                    tasksContainer.reset(using: (TasksContainer.mockedTasks, TasksContainer.mockedEpics))
+                    // that's for release
+//                    TasksContainer.load { result in
+//                        switch result {
+//                        case .failure(let error):
+//                            print("[ERROR] Could not load data from persistent storage. Reason: \(String(describing: error))")
+//                            // couldn't load data from persistent storage -> initialize empty list
+//                            tasksContainer.reset(using: nil)
+//                            // too aggresive
+//                            // fatalError(String(describing: error))
+//                        case .success(let data):
+//                            tasksContainer.reset(using: data)
+//                        }
+//                    }
                 }
         }
     }
