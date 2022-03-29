@@ -17,11 +17,11 @@ struct TasksOverview: View {
             LazyVStack(alignment: .leading, spacing: 0) {
                 ForEach($tasksContainer.tasks) { $task in
                     TasksTableCell(task: $task)
-                    // TODO: use correct width
+                        .frame(height: 45)
                     Divider()
                         .background(Color.TextColor.primary)
-                        
                 }
+                .padding(.horizontal)
             }
         }
     }

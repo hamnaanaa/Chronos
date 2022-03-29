@@ -11,42 +11,51 @@ struct TasksTableCell: View {
     @Binding var task: Task
     
     var body: some View {
-        HStack {
-            Group {
-                Divider().background(Color.TextColor.primary)
-                categorySection
-                    .frame(width: 100)
+        GeometryReader { geo in
+            HStack {
+                Group {
+                    Divider().background(Color.TextColor.primary)
+                    categorySection
+                        .frame(
+                            width: geo.size.width * 1/12)
+                }
+                Group {
+                    Divider().background(Color.TextColor.primary)
+                    statusSection
+                        .frame(
+                            width: geo.size.width * 1/12)
+                }
+                Group {
+                    Divider().background(Color.TextColor.primary)
+                    titleSection
+                        .frame(
+                            width: geo.size.width * 3/12,
+                            alignment: .topLeading)
+                        .multilineTextAlignment(.leading)
+                }
+                Group {
+                    Divider().background(Color.TextColor.primary)
+                    epicsSection
+                        .frame(
+                            width: geo.size.width * 3/12,
+                            alignment: .leading)
+                }
+                Group {
+                    Divider().background(Color.TextColor.primary)
+                    dateDueSection
+                        .frame(
+                            width: geo.size.width * 1.5/12)
+                }
+                Group {
+                    Divider().background(Color.TextColor.primary)
+                    dateCreatedSection
+                        .frame(
+                            width: geo.size.width * 1.5/12)
+                    Divider().background(Color.TextColor.primary)
+                }
             }
-            Group {
-                Divider().background(Color.TextColor.primary)
-                statusSection
-                    .frame(width: 100)
-            }
-            Group {
-                Divider().background(Color.TextColor.primary)
-                titleSection
-                    .frame(width: 290, alignment: .topLeading)
-                    .multilineTextAlignment(.leading)
-            }
-            Group {
-                Divider().background(Color.TextColor.primary)
-                epicsSection
-                    .frame(width: 300, alignment: .leading)
-            }
-            Group {
-                Divider().background(Color.TextColor.primary)
-                dateDueSection
-                    .frame(width: 140)
-            }
-            Group {
-                Divider().background(Color.TextColor.primary)
-                dateCreatedSection
-                    .frame(width: 140)
-                Divider().background(Color.TextColor.primary)
-            }
+            .hoverEffect()
         }
-        .frame(height: 45, alignment: .center)
-        .hoverEffect()
     }
     
     private var categorySection: some View {
