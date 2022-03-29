@@ -39,6 +39,8 @@
 		F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
 		F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
 		F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
+		F2C8A6FC27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */; };
+		F2C8A6FD27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */; };
 		F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
@@ -69,6 +71,7 @@
 		F299266E27E25DD300CE26ED /* TasksContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksContainer.swift; sourceTree = "<group>"; };
 		F299267127E28A8C00CE26ED /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
+		F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableHeader.swift; sourceTree = "<group>"; };
 		F2F0825E27E7E1F60035D461 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
 		F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksOverview.swift; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 			children = (
 				F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */,
 				F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */,
+				F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -316,6 +320,7 @@
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */,
+				F2C8A6FC27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */,
 				F267EE5127E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
@@ -342,6 +347,7 @@
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
 				F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */,
+				F2C8A6FD27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */,
 				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
