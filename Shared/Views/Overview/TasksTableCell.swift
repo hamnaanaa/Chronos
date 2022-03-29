@@ -14,19 +14,19 @@ struct TasksTableCell: View {
         GeometryReader { geo in
             HStack {
                 Group {
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                     categorySection
                         .frame(
                             width: geo.size.width * 1/12)
                 }
                 Group {
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                     statusSection
                         .frame(
                             width: geo.size.width * 1/12)
                 }
                 Group {
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                     titleSection
                         .frame(
                             width: geo.size.width * 3/12,
@@ -34,24 +34,24 @@ struct TasksTableCell: View {
                         .multilineTextAlignment(.leading)
                 }
                 Group {
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                     epicsSection
                         .frame(
                             width: geo.size.width * 3/12,
                             alignment: .leading)
                 }
                 Group {
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                     dateDueSection
                         .frame(
                             width: geo.size.width * 1.5/12)
                 }
                 Group {
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                     dateCreatedSection
                         .frame(
                             width: geo.size.width * 1.5/12)
-                    Divider().background(Color.TextColor.primary)
+                    Divider().background(Color.BackgroundColor.primary)
                 }
             }
             .hoverEffect()

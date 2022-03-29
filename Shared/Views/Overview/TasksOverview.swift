@@ -19,7 +19,7 @@ struct TasksOverview: View {
                     TasksTableCell(task: $task)
                         .frame(height: 45)
                     Divider()
-                        .background(Color.TextColor.primary)
+                        .background(Color.BackgroundColor.primary)
                 }
                 .padding(.horizontal)
             }
