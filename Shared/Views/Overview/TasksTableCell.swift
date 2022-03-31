@@ -13,51 +13,57 @@ struct TasksTableCell: View {
     var body: some View {
         GeometryReader { geo in
             HStack {
+                // category
                 Group {
                     Divider().background(Color.BackgroundColor.primary)
                     categorySection
                         .frame(
-                            width: geo.size.width * 1/12,
+                            width: geo.size.width * TasksTableConstraints.categoryWidth,
                             alignment: .leading
                         )
                 }
+                // status
                 Group {
                     Divider().background(Color.BackgroundColor.primary)
                     statusSection
                         .frame(
-                            width: geo.size.width * 1/12,
+                            width: geo.size.width * TasksTableConstraints.statusWidth,
                             alignment: .leading
                         )
                 }
+                // title
                 Group {
                     Divider().background(Color.BackgroundColor.primary)
                     titleSection
                         .frame(
-                            width: geo.size.width * 3/12,
+                            width: geo.size.width * TasksTableConstraints.titleWidth,
                             alignment: .topLeading
                         )
                         .multilineTextAlignment(.leading)
                 }
+                // epics
                 Group {
                     Divider().background(Color.BackgroundColor.primary)
                     epicsSection
                         .frame(
-                            width: geo.size.width * 3/12,
+                            width: geo.size.width * TasksTableConstraints.epicsWidth,
                             alignment: .leading
                         )
                 }
+                // dateDue
                 Group {
                     Divider().background(Color.BackgroundColor.primary)
                     dateDueSection
                         .frame(
-                            width: geo.size.width * 1.5/12
+                            width: geo.size.width * TasksTableConstraints.dateDueWidth
                         )
                 }
+                // dateCreated
                 Group {
                     Divider().background(Color.BackgroundColor.primary)
                     dateCreatedSection
                         .frame(
-                            width: geo.size.width * 1.5/12
+                            width: geo.size.width * TasksTableConstraints.dateCreatedWidth
                         )
                     Divider().background(Color.BackgroundColor.primary)
                 }

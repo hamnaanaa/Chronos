@@ -11,6 +11,8 @@
 		F213019927EA219F005D151F /* EpicEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019727EA219F005D151F /* EpicEditView.swift */; };
 		F213019B27EA9673005D151F /* CustomLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019A27EA9673005D151F /* CustomLabelStyles.swift */; };
 		F213019C27EA9673005D151F /* CustomLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019A27EA9673005D151F /* CustomLabelStyles.swift */; };
+		F26584E627F6345900AF5FDC /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26584E527F6345900AF5FDC /* UIConstraints.swift */; };
+		F26584E727F6345900AF5FDC /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26584E527F6345900AF5FDC /* UIConstraints.swift */; };
 		F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
 		F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
 		F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4A27E12F6A006CEDF8 /* Category.swift */; };
@@ -54,6 +56,7 @@
 /* Begin PBXFileReference section */
 		F213019727EA219F005D151F /* EpicEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicEditView.swift; sourceTree = "<group>"; };
 		F213019A27EA9673005D151F /* CustomLabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelStyles.swift; sourceTree = "<group>"; };
+		F26584E527F6345900AF5FDC /* UIConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstraints.swift; sourceTree = "<group>"; };
 		F267EE4727E12F2A006CEDF8 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F267EE4A27E12F6A006CEDF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F267EE4D27E13003006CEDF8 /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 				F299267527E2957300CE26ED /* Binding+Optionals.swift */,
 				F2F0825E27E7E1F60035D461 /* AppColors.swift */,
 				F213019A27EA9673005D151F /* CustomLabelStyles.swift */,
+				F26584E527F6345900AF5FDC /* UIConstraints.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -321,6 +325,7 @@
 				F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */,
 				F2C8A6FC27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */,
+				F26584E627F6345900AF5FDC /* UIConstraints.swift in Sources */,
 				F267EE5127E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266527E203AB00CE26ED /* Emotion.swift in Sources */,
@@ -348,6 +353,7 @@
 				F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */,
 				F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */,
 				F2C8A6FD27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */,
+				F26584E727F6345900AF5FDC /* UIConstraints.swift in Sources */,
 				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
 				F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */,
 				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
