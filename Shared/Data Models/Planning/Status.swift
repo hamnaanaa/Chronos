@@ -54,3 +54,11 @@ enum Status: String, CaseIterable, Codable {
         rawValue
     }
 }
+
+
+extension Status: Comparable {
+    // TODO: better comparator logic?
+    static func < (lhs: Status, rhs: Status) -> Bool {
+        lhs.name < rhs.name
+    }
+}

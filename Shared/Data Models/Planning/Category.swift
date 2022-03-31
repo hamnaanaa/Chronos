@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+///
 enum Category: String, CaseIterable, Codable {
     case education = "Education"
     case work = "Work"
@@ -62,5 +63,14 @@ enum Category: String, CaseIterable, Codable {
     
     var name: String {
         rawValue
+    }
+}
+
+///
+extension Category: Comparable {
+    /// Lexicographic comparison for the categories names is applied
+    // TODO: better comparator logic?
+    static func < (lhs: Category, rhs: Category) -> Bool {
+        lhs.name < rhs.name
     }
 }

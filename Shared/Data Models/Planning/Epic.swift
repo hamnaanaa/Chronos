@@ -26,6 +26,14 @@ struct Epic: Identifiable, Codable {
 }
 
 
+extension Epic: Comparable {
+    // TODO: better comparator logic?
+    static func < (lhs: Epic, rhs: Epic) -> Bool {
+        lhs.title < rhs.title
+    }
+}
+
+
 /// Mocked data
 extension Epic {
     static var exampleEpic1 = Epic(title: "WS2122", description: "Wintersemester 2021", color: .BackgroundColor.purple, category: .education)

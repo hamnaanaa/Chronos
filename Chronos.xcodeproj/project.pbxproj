@@ -41,6 +41,8 @@
 		F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
 		F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
 		F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
+		F2BBB6A827F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBB6A727F66B27004ED804 /* OptionalDate+Comparable.swift */; };
+		F2BBB6A927F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBB6A727F66B27004ED804 /* OptionalDate+Comparable.swift */; };
 		F2C8A6FC27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */; };
 		F2C8A6FD27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */; };
 		F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
@@ -74,6 +76,7 @@
 		F299266E27E25DD300CE26ED /* TasksContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksContainer.swift; sourceTree = "<group>"; };
 		F299267127E28A8C00CE26ED /* TaskEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditView.swift; sourceTree = "<group>"; };
 		F299267527E2957300CE26ED /* Binding+Optionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optionals.swift"; sourceTree = "<group>"; };
+		F2BBB6A727F66B27004ED804 /* OptionalDate+Comparable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionalDate+Comparable.swift"; sourceTree = "<group>"; };
 		F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableHeader.swift; sourceTree = "<group>"; };
 		F2F0825E27E7E1F60035D461 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorView.swift; sourceTree = "<group>"; };
@@ -189,11 +192,12 @@
 		F299266A27E25B1C00CE26ED /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F299266B27E25B2400CE26ED /* Color+Codable.swift */,
-				F299267527E2957300CE26ED /* Binding+Optionals.swift */,
+				F26584E527F6345900AF5FDC /* UIConstraints.swift */,
 				F2F0825E27E7E1F60035D461 /* AppColors.swift */,
 				F213019A27EA9673005D151F /* CustomLabelStyles.swift */,
-				F26584E527F6345900AF5FDC /* UIConstraints.swift */,
+				F299266B27E25B2400CE26ED /* Color+Codable.swift */,
+				F299267527E2957300CE26ED /* Binding+Optionals.swift */,
+				F2BBB6A727F66B27004ED804 /* OptionalDate+Comparable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -319,6 +323,7 @@
 				F267EE4E27E13003006CEDF8 /* Epic.swift in Sources */,
 				F213019827EA219F005D151F /* EpicEditView.swift in Sources */,
 				F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */,
+				F2BBB6A827F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */,
 				F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */,
 				F299267227E28A8C00CE26ED /* TaskEditView.swift in Sources */,
 				F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
@@ -347,6 +352,7 @@
 				F267EE4F27E13003006CEDF8 /* Epic.swift in Sources */,
 				F213019927EA219F005D151F /* EpicEditView.swift in Sources */,
 				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
+				F2BBB6A927F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */,
 				F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */,
 				F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */,
 				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
