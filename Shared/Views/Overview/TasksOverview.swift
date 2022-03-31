@@ -17,6 +17,7 @@ struct TasksOverview: View {
             LazyVStack(alignment: .leading, spacing: 0) {
                 TasksTableHeader()
                     .frame(height: TasksTableConstraints.cellHeight)
+                    .background(Color.BackgroundColor.gray)
                 ForEach($tasksContainer.tasks) { $task in
                     TasksTableCell(task: $task)
                         .frame(height: TasksTableConstraints.cellHeight)
