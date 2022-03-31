@@ -16,15 +16,15 @@ struct TasksOverview: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 0) {
                 TasksTableHeader()
-                    .frame(height: 45)
+                    .frame(height: TasksTableConstraints.cellHeight)
                 ForEach($tasksContainer.tasks) { $task in
                     TasksTableCell(task: $task)
-                        .frame(height: 45)
+                        .frame(height: TasksTableConstraints.cellHeight)
                     Divider()
                         .background(Color.BackgroundColor.primary)
                 }
             }
-            .padding(.horizontal)
+            .padding([.horizontal, .top])
         }
     }
 }

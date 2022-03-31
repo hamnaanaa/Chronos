@@ -6,9 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 /// A container for all `TasksTable`-specific UI constraints
 struct TasksTableConstraints {
+    static let cellHeight: CGFloat = 45
+    
     static let categoryWidth: Double = 1.1/12
     static let statusWidth: Double = 1/12
     static let titleWidth: Double = 3/12
