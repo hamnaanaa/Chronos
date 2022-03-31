@@ -212,8 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */,
-				F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */,
 				F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */,
+				F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";

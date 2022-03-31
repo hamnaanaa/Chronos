@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TasksTableHeader: View {
+    @Binding var sortingPredicate: (Binding<Task>, Binding<Task>) -> Bool
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -108,7 +110,7 @@ struct TasksTableHeader: View {
 
 struct TasksTableHeader_Previews: PreviewProvider {
     static var previews: some View {
-        TasksTableHeader()
+        TasksTableHeader(sortingPredicate: .constant({ _,_ in return true }))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

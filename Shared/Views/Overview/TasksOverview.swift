@@ -10,15 +10,17 @@ import SwiftUI
 struct TasksOverview: View {
     @EnvironmentObject var tasksContainer: TasksContainer
     
+    @State private var sortingPredicate: (Binding<Task>, Binding<Task>) -> Bool = { _,_ in return true }
+    
     let columns = Array(repeating: GridItem(.flexible()), count: Task.numOfProps)
     
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 0) {
-                TasksTableHeader()
+                TasksTableHeader(sortingPredicate: $sortingPredicate)
                     .frame(height: TasksTableConstraints.cellHeight)
                     .background(Color.BackgroundColor.gray)
-                ForEach($tasksContainer.tasks) { $task in
+                ForEach($tasksContainer.tasks.sorted(by: sortingPredicate)) { $task in
                     TasksTableCell(task: $task)
                         .frame(height: TasksTableConstraints.cellHeight)
                     Divider()
