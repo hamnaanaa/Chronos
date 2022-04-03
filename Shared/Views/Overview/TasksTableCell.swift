@@ -10,65 +10,73 @@ import SwiftUI
 struct TasksTableCell: View {
     @Binding var task: Task
     
+    @State private var showingTaskSheet = false
+    
     var body: some View {
         GeometryReader { geo in
-            HStack {
-                // category
-                Group {
-                    Divider().background(Color.BackgroundColor.primary)
-                    categorySection
-                        .frame(
-                            width: geo.size.width * TasksTableConstraints.categoryWidth,
-                            alignment: .leading
-                        )
-                }
-                // status
-                Group {
-                    Divider().background(Color.BackgroundColor.primary)
-                    statusSection
-                        .frame(
-                            width: geo.size.width * TasksTableConstraints.statusWidth,
-                            alignment: .leading
-                        )
-                }
-                // title
-                Group {
-                    Divider().background(Color.BackgroundColor.primary)
-                    titleSection
-                        .frame(
-                            width: geo.size.width * TasksTableConstraints.titleWidth,
-                            alignment: .topLeading
-                        )
-                        .multilineTextAlignment(.leading)
-                }
-                // epics
-                Group {
-                    Divider().background(Color.BackgroundColor.primary)
-                    epicsSection
-                        .frame(
-                            width: geo.size.width * TasksTableConstraints.epicsWidth,
-                            alignment: .leading
-                        )
-                }
-                // dateDue
-                Group {
-                    Divider().background(Color.BackgroundColor.primary)
-                    dateDueSection
-                        .frame(
-                            width: geo.size.width * TasksTableConstraints.dateDueWidth
-                        )
-                }
-                // dateCreated
-                Group {
-                    Divider().background(Color.BackgroundColor.primary)
-                    dateCreatedSection
-                        .frame(
-                            width: geo.size.width * TasksTableConstraints.dateCreatedWidth
-                        )
-                    Divider().background(Color.BackgroundColor.primary)
+            Button {
+                showingTaskSheet = true
+            } label: {
+                HStack {
+                    // category
+                    Group {
+                        Divider().background(Color.BackgroundColor.primary)
+                        categorySection
+                            .frame(
+                                width: geo.size.width * TasksTableConstraints.categoryWidth,
+                                alignment: .leading
+                            )
+                    }
+                    // status
+                    Group {
+                        Divider().background(Color.BackgroundColor.primary)
+                        statusSection
+                            .frame(
+                                width: geo.size.width * TasksTableConstraints.statusWidth,
+                                alignment: .leading
+                            )
+                    }
+                    // title
+                    Group {
+                        Divider().background(Color.BackgroundColor.primary)
+                        titleSection
+                            .frame(
+                                width: geo.size.width * TasksTableConstraints.titleWidth,
+                                alignment: .topLeading
+                            )
+                            .multilineTextAlignment(.leading)
+                    }
+                    // epics
+                    Group {
+                        Divider().background(Color.BackgroundColor.primary)
+                        epicsSection
+                            .frame(
+                                width: geo.size.width * TasksTableConstraints.epicsWidth,
+                                alignment: .leading
+                            )
+                    }
+                    // dateDue
+                    Group {
+                        Divider().background(Color.BackgroundColor.primary)
+                        dateDueSection
+                            .frame(
+                                width: geo.size.width * TasksTableConstraints.dateDueWidth
+                            )
+                    }
+                    // dateCreated
+                    Group {
+                        Divider().background(Color.BackgroundColor.primary)
+                        dateCreatedSection
+                            .frame(
+                                width: geo.size.width * TasksTableConstraints.dateCreatedWidth
+                            )
+                        Divider().background(Color.BackgroundColor.primary)
+                    }
                 }
             }
-            .hoverEffect()
+            .sheet(isPresented: $showingTaskSheet) {
+                Text("Hi!")
+            }
         }
     }
     
@@ -85,6 +93,7 @@ struct TasksTableCell: View {
     private var titleSection: some View {
         Text(task.title)
             .font(.headline.bold())
+            .foregroundColor(.TextColor.primary)
     }
     
     private var epicsSection: some View {
@@ -113,6 +122,7 @@ struct TasksTableCell: View {
     private var dateDueSection: some View {
         if let dateDue = task.dateDue {
             return Text(dateDue, format: .dateTime.year().month().day())
+                .foregroundColor(.TextColor.primary)
         } else {
             return Text("")
         }
@@ -121,6 +131,7 @@ struct TasksTableCell: View {
     private var dateCreatedSection: some View {
         Text(task.dateCreated,
              format: .dateTime.year().month().day())
+            .foregroundColor(.TextColor.primary)
     }
 }
 
