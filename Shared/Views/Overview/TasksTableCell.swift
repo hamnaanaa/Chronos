@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TasksTableCell: View {
+    @EnvironmentObject var tasksContainer: TasksContainer
+    
     @Binding var task: Task
     
     @State private var showingTaskSheet = false
@@ -75,7 +77,28 @@ struct TasksTableCell: View {
                 }
             }
             .sheet(isPresented: $showingTaskSheet) {
-                Text("Hi!")
+                NavigationView {
+                    TaskEditView(task: $task)
+                        .toolbar {
+                            ToolbarItem(placement: .destructiveAction) {
+                                // hide the sheet and reset the new task
+                                Button("Delete", role: .destructive) {
+                                    showingTaskSheet = false
+                                    tasksContainer.removeTask(task: task)
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                            ToolbarItem(placement: .cancellationAction) {
+                                // hide the sheet with no change
+                                Button("Done", role: .cancel) {
+                                    showingTaskSheet = false
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationViewStyle(.stack)
+                }
             }
         }
     }
