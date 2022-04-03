@@ -52,8 +52,7 @@ struct TasksTableHeader: View {
             Group {
                 // TODO: arrow direction depending on state
                 Divider().background(Color.BackgroundColor.primary)
-                Label("Category", systemImage: "arrowtriangle.down.circle.fill")
-                    .labelStyle(HeadlineLabelStyle())
+                label(title: "Category", for: \Task.category)
                     .frame(
                         width: geo.size.width * TasksTableConstraints.categoryWidth,
                         alignment: .leading
@@ -69,8 +68,7 @@ struct TasksTableHeader: View {
         } label: {
             Group {
                 Divider().background(Color.BackgroundColor.primary)
-                Label("Status", systemImage: "arrowtriangle.down.circle.fill")
-                    .labelStyle(HeadlineLabelStyle())
+                label(title: "Status", for: \Task.status)
                     .frame(
                         width: geo.size.width * TasksTableConstraints.statusWidth,
                         alignment: .leading
@@ -86,8 +84,7 @@ struct TasksTableHeader: View {
         } label: {
             Group {
                 Divider().background(Color.BackgroundColor.primary)
-                Label("Task", systemImage: "arrowtriangle.down.circle.fill")
-                    .labelStyle(HeadlineLabelStyle())
+                label(title: "Task", for: \Task.title)
                     .frame(
                         width: geo.size.width * TasksTableConstraints.titleWidth,
                         alignment: .topLeading
@@ -99,18 +96,16 @@ struct TasksTableHeader: View {
     
     /// Epics header wrapper
     private func epicsHeader(alignment geo: GeometryProxy) -> some View {
-        Button {
-            // TODO: how can epics lists be sorted?
-        } label: {
-            Group {
-                Divider().background(Color.BackgroundColor.primary)
-                Label("Epics", systemImage: "arrowtriangle.down.circle.fill")
-                    .labelStyle(HeadlineLabelStyle())
-                    .frame(
-                        width: geo.size.width * TasksTableConstraints.epicsWidth,
-                        alignment: .leading
-                    )
-            }
+        Group {
+            Divider().background(Color.BackgroundColor.primary)
+            // this label is not generic as no sorting of epics lists is currently supported
+            Text("Epics")
+                .font(.headline)
+                .foregroundColor(.TextColor.gray)
+                .frame(
+                    width: geo.size.width * TasksTableConstraints.epicsWidth,
+                    alignment: .leading
+                )
         }
     }
     
@@ -121,8 +116,7 @@ struct TasksTableHeader: View {
         } label: {
             Group {
                 Divider().background(Color.BackgroundColor.primary)
-                Label("Due", systemImage: "arrowtriangle.down.circle.fill")
-                    .labelStyle(HeadlineLabelStyle())
+                label(title: "Due", for: \Task.dateDue)
                     .frame(
                         width: geo.size.width * TasksTableConstraints.dateDueWidth
                     )
@@ -134,11 +128,10 @@ struct TasksTableHeader: View {
     private func dateCreatedHeader(alignment geo: GeometryProxy) -> some View {
         Button {
             onButtonPressed(for: \Task.dateCreated)
-        } label:  {
+        } label: {
             Group {
                 Divider().background(Color.BackgroundColor.primary)
-                Label("Created", systemImage: "arrowtriangle.down.circle.fill")
-                    .labelStyle(HeadlineLabelStyle())
+                label(title: "Created", for: \Task.dateCreated)
                     .frame(
                         width: geo.size.width * TasksTableConstraints.dateCreatedWidth
                     )
@@ -147,6 +140,13 @@ struct TasksTableHeader: View {
         }
     }
     
+    private func label<T: Comparable>(title: String, for keyPath: KeyPath<Task, T>) -> some View {
+        Label(title, systemImage: "arrowtriangle.\(activeSorting.isActiveAndAsc(for: keyPath) ? "down" : "up").circle.fill")
+            .labelStyle(HeadlineLabelStyle())
+            .foregroundColor(activeSorting.isActive(for: keyPath) ? .TextColor.blue : .TextColor.gray)
+    }
+    
+    /// A helper function wrapping all generic functionality associated with a header button press
     private func onButtonPressed<T:Comparable>(for keyPath: KeyPath<Task, T>) {
         if activeSorting.isActiveAndAsc(for: keyPath) {
             sortingPredicate = { $0.wrappedValue[keyPath: keyPath] > $1.wrappedValue[keyPath: keyPath] }
@@ -185,6 +185,24 @@ struct TasksTableHeader: View {
                 return keyPath == \Task.dateCreated
             default:
                 return false
+            }
+        }
+        
+        /// Detect if this state  is active for the given keyPath property
+        func isActive<T: Comparable>(for keyPath: KeyPath<Task, T>) -> Bool {
+            switch self {
+            case .categoryAsc, .categoryDesc:
+                return keyPath == \Task.category
+            case .statusAsc, .statusDesc:
+                return keyPath == \Task.status
+            case .titleAsc, .titleDesc:
+                return keyPath == \Task.title
+            case .epicsAsc, .epicsDesc:
+                return keyPath == \Task.epics
+            case .dateDueAsc, .dateDueDesc:
+                return keyPath == \Task.dateDue
+            case .dateCreatedAsc, .dateCreatedDesc:
+                return keyPath == \Task.dateCreated
             }
         }
         

@@ -10,7 +10,7 @@ import SwiftUI
 struct TasksOverview: View {
     @EnvironmentObject var tasksContainer: TasksContainer
     
-    @State private var sortingPredicate: (Binding<Task>, Binding<Task>) -> Bool = { _,_ in return true }
+    @State private var sortingPredicate: (Binding<Task>, Binding<Task>) -> Bool = { $0.wrappedValue.dateCreated < $1.wrappedValue.dateCreated }
     
     let columns = Array(repeating: GridItem(.flexible()), count: Task.numOfProps)
     
@@ -19,7 +19,6 @@ struct TasksOverview: View {
             LazyVStack(alignment: .leading, spacing: 0) {
                 TasksTableHeader(sortingPredicate: $sortingPredicate)
                     .frame(height: TasksTableConstraints.cellHeight)
-                    .background(Color.BackgroundColor.gray)
                 ForEach($tasksContainer.tasks.sorted(by: sortingPredicate)) { $task in
                     TasksTableCell(task: $task)
                         .frame(height: TasksTableConstraints.cellHeight)
