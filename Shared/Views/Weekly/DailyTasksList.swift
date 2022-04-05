@@ -50,7 +50,7 @@ struct DailyTasksSection: View {
     var body: some View {
         DisclosureGroup(isExpanded: $isExpanded) {
             VStack {
-                ForEach($tasksContainer.tasks) { $task in
+                ForEach($tasksContainer.tasks, id: \.self.wrappedValue.id) { $task in
                     if isFittingTask(task) {
                         DailyTasksEntry(task: $task)
                     }

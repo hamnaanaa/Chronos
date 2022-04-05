@@ -150,7 +150,7 @@ struct TaskEditView: View {
                 AddEpicButton(task: $task)
                 
                 // all other epics
-                ForEach($task.epics) { $epic in
+                ForEach($task.epics, id: \.self.wrappedValue.id) { $epic in
                     NavigationLink(destination: EpicEditView(epic: $epic)) {
                         Text(epic.title)
                             .padding(.vertical, 4)
