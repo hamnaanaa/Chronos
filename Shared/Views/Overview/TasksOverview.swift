@@ -22,7 +22,7 @@ struct TasksOverview: View {
                     .frame(height: TasksTableConstraints.cellHeight / 2)
                 TasksTableHeader(sortingPredicate: $sortingPredicate)
                     .frame(height: TasksTableConstraints.cellHeight)
-                ForEach($tasksContainer.tasks.sorted(by: sortingPredicate)) { $task in
+                ForEach($tasksContainer.tasks.sorted(by: sortingPredicate), id: \.self.wrappedValue.id) { $task in
                     TasksTableCell(task: $task)
                         .frame(height: TasksTableConstraints.cellHeight)
                     Divider()
