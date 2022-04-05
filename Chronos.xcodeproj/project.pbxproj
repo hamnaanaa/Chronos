@@ -8,51 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		F213019827EA219F005D151F /* EpicEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019727EA219F005D151F /* EpicEditView.swift */; };
-		F213019927EA219F005D151F /* EpicEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019727EA219F005D151F /* EpicEditView.swift */; };
 		F213019B27EA9673005D151F /* CustomLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019A27EA9673005D151F /* CustomLabelStyles.swift */; };
-		F213019C27EA9673005D151F /* CustomLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213019A27EA9673005D151F /* CustomLabelStyles.swift */; };
 		F26584E627F6345900AF5FDC /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26584E527F6345900AF5FDC /* UIConstraints.swift */; };
-		F26584E727F6345900AF5FDC /* UIConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26584E527F6345900AF5FDC /* UIConstraints.swift */; };
 		F267EE4827E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
-		F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4727E12F2A006CEDF8 /* Task.swift */; };
 		F267EE4B27E12F6A006CEDF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4A27E12F6A006CEDF8 /* Category.swift */; };
-		F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4A27E12F6A006CEDF8 /* Category.swift */; };
 		F267EE4E27E13003006CEDF8 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4D27E13003006CEDF8 /* Epic.swift */; };
-		F267EE4F27E13003006CEDF8 /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE4D27E13003006CEDF8 /* Epic.swift */; };
 		F267EE5127E130B5006CEDF8 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5027E130B5006CEDF8 /* Status.swift */; };
-		F267EE5227E130B5006CEDF8 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5027E130B5006CEDF8 /* Status.swift */; };
 		F267EE5427E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */; };
-		F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F267EE5327E1350F006CEDF8 /* WeeklyTasksView.swift */; };
 		F285776C27E11B9A00A812F3 /* ChronosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285775C27E11B9A00A812F3 /* ChronosApp.swift */; };
-		F285776D27E11B9A00A812F3 /* ChronosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285775C27E11B9A00A812F3 /* ChronosApp.swift */; };
 		F285776E27E11B9A00A812F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285775D27E11B9A00A812F3 /* ContentView.swift */; };
-		F285776F27E11B9A00A812F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285775D27E11B9A00A812F3 /* ContentView.swift */; };
 		F285777027E11B9A00A812F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F285775E27E11B9A00A812F3 /* Assets.xcassets */; };
-		F285777127E11B9A00A812F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F285775E27E11B9A00A812F3 /* Assets.xcassets */; };
 		F285777C27E11CCE00A812F3 /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285777B27E11CCE00A812F3 /* DailyTasksList.swift */; };
-		F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F285777B27E11CCE00A812F3 /* DailyTasksList.swift */; };
 		F299266527E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
-		F299266627E203AB00CE26ED /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266427E203AB00CE26ED /* Emotion.swift */; };
 		F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
-		F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266B27E25B2400CE26ED /* Color+Codable.swift */; };
 		F299266F27E25DD300CE26ED /* TasksContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266E27E25DD300CE26ED /* TasksContainer.swift */; };
-		F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299266E27E25DD300CE26ED /* TasksContainer.swift */; };
 		F299267227E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
-		F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267127E28A8C00CE26ED /* TaskEditView.swift */; };
 		F299267627E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
-		F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F299267527E2957300CE26ED /* Binding+Optionals.swift */; };
 		F2BBB6A827F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBB6A727F66B27004ED804 /* OptionalDate+Comparable.swift */; };
-		F2BBB6A927F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BBB6A727F66B27004ED804 /* OptionalDate+Comparable.swift */; };
 		F2C8A6FC27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */; };
-		F2C8A6FD27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8A6FB27F3BA9600F5A225 /* TasksTableHeader.swift */; };
 		F2F0825F27E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
-		F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0825E27E7E1F60035D461 /* AppColors.swift */; };
 		F2F0826227E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
-		F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F0826127E8F7FE0035D461 /* ColorSelectorView.swift */; };
 		F2F7C0F727EE715000CB05F2 /* TasksOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */; };
-		F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F627EE715000CB05F2 /* TasksOverview.swift */; };
 		F2F7C0FA27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */; };
-		F2F7C0FB27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7C0F927EE7FB700CB05F2 /* TasksTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +45,6 @@
 		F285775D27E11B9A00A812F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F285775E27E11B9A00A812F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F285776327E11B9A00A812F3 /* Chronos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronos.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F285776927E11B9A00A812F3 /* Chronos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chronos.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F285776B27E11B9A00A812F3 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		F285777B27E11CCE00A812F3 /* DailyTasksList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTasksList.swift; sourceTree = "<group>"; };
 		F299266427E203AB00CE26ED /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		F299266B27E25B2400CE26ED /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
@@ -86,13 +61,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		F285776027E11B9A00A812F3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F285776627E11B9A00A812F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -124,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				F285775B27E11B9A00A812F3 /* Shared */,
-				F285776A27E11B9A00A812F3 /* macOS */,
 				F285776427E11B9A00A812F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,17 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				F285776327E11B9A00A812F3 /* Chronos.app */,
-				F285776927E11B9A00A812F3 /* Chronos.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F285776A27E11B9A00A812F3 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				F285776B27E11B9A00A812F3 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 		F285777A27E11BDE00A812F3 /* Views */ = {
@@ -242,23 +200,6 @@
 			productReference = F285776327E11B9A00A812F3 /* Chronos.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F285776827E11B9A00A812F3 /* Chronos (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F285777727E11B9A00A812F3 /* Build configuration list for PBXNativeTarget "Chronos (macOS)" */;
-			buildPhases = (
-				F285776527E11B9A00A812F3 /* Sources */,
-				F285776627E11B9A00A812F3 /* Frameworks */,
-				F285776727E11B9A00A812F3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Chronos (macOS)";
-			productName = "Chronos (macOS)";
-			productReference = F285776927E11B9A00A812F3 /* Chronos.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,9 +211,6 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					F285776227E11B9A00A812F3 = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					F285776827E11B9A00A812F3 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -291,7 +229,6 @@
 			projectRoot = "";
 			targets = (
 				F285776227E11B9A00A812F3 /* Chronos (iOS) */,
-				F285776827E11B9A00A812F3 /* Chronos (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -302,14 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F285777027E11B9A00A812F3 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F285776727E11B9A00A812F3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F285777127E11B9A00A812F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,35 +271,6 @@
 				F299266C27E25B2400CE26ED /* Color+Codable.swift in Sources */,
 				F285776C27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
 				F2F7C0FA27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F285776527E11B9A00A812F3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F267EE4F27E13003006CEDF8 /* Epic.swift in Sources */,
-				F213019927EA219F005D151F /* EpicEditView.swift in Sources */,
-				F267EE4927E12F2A006CEDF8 /* Task.swift in Sources */,
-				F2BBB6A927F66B27004ED804 /* OptionalDate+Comparable.swift in Sources */,
-				F299267727E2957300CE26ED /* Binding+Optionals.swift in Sources */,
-				F299267327E28A8C00CE26ED /* TaskEditView.swift in Sources */,
-				F267EE5527E1350F006CEDF8 /* WeeklyTasksView.swift in Sources */,
-				F299267027E25DD300CE26ED /* TasksContainer.swift in Sources */,
-				F2F7C0F827EE715000CB05F2 /* TasksOverview.swift in Sources */,
-				F2C8A6FD27F3BA9600F5A225 /* TasksTableHeader.swift in Sources */,
-				F26584E727F6345900AF5FDC /* UIConstraints.swift in Sources */,
-				F267EE5227E130B5006CEDF8 /* Status.swift in Sources */,
-				F267EE4C27E12F6A006CEDF8 /* Category.swift in Sources */,
-				F299266627E203AB00CE26ED /* Emotion.swift in Sources */,
-				F285776F27E11B9A00A812F3 /* ContentView.swift in Sources */,
-				F285777D27E11CCE00A812F3 /* DailyTasksList.swift in Sources */,
-				F213019C27EA9673005D151F /* CustomLabelStyles.swift in Sources */,
-				F2F0826327E8F7FE0035D461 /* ColorSelectorView.swift in Sources */,
-				F2F0826027E7E1F60035D461 /* AppColors.swift in Sources */,
-				F299266D27E25B2400CE26ED /* Color+Codable.swift in Sources */,
-				F285776D27E11B9A00A812F3 /* ChronosApp.swift in Sources */,
-				F2F7C0FB27EE7FB700CB05F2 /* TasksTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,62 +449,6 @@
 			};
 			name = Release;
 		};
-		F285777827E11B9A00A812F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 837AWZP3M7;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.hamnaanaa.Chronos;
-				PRODUCT_NAME = Chronos;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		F285777927E11B9A00A812F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 837AWZP3M7;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = de.hamnaanaa.Chronos;
-				PRODUCT_NAME = Chronos;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -622,15 +466,6 @@
 			buildConfigurations = (
 				F285777527E11B9A00A812F3 /* Debug */,
 				F285777627E11B9A00A812F3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F285777727E11B9A00A812F3 /* Build configuration list for PBXNativeTarget "Chronos (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F285777827E11B9A00A812F3 /* Debug */,
-				F285777927E11B9A00A812F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -169,8 +169,10 @@ struct DailyTasksSection: View {
                                 .buttonStyle(.bordered)
                             }
                         }
+                    #if os(iOS)
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationViewStyle(.stack)
+                    #endif
                 }
             }
         }
